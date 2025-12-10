@@ -7,7 +7,6 @@
 <meta name="description" content="Portafolio profesional de Valentina Mendoza - pentesting, auditoría web, MitraScan y writeups." />
 <link rel="icon" href="favicon.ico" />
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -33,7 +32,6 @@
     line-height:1.45;
   }
 
-  /* Canvas background */
   #matrix{
     position:fixed;
     inset:0;
@@ -42,7 +40,7 @@
     filter: blur(1px) contrast(1.1);
   }
 
-  /* NAVBAR */
+
   nav{
     width:100%;
     display:flex;
@@ -65,7 +63,6 @@
   .navlinks a{color:var(--muted);text-decoration:none;padding:6px 8px;border-radius:6px;font-weight:600}
   .navlinks a:hover{color:var(--neon);text-shadow:0 0 8px rgba(0,255,149,0.12)}
 
-  /* HERO */
   .hero{
     max-width:var(--maxwidth);
     margin:28px auto 8px;
@@ -98,13 +95,13 @@
   .mini-card{background:rgba(0,0,0,0.2);padding:10px;border-radius:8px;margin-bottom:10px}
   .mini-card h4{margin:6px 0;color:var(--neon)}
 
-  /* SECTIONS */
+  
   .container{max-width:var(--maxwidth);margin:18px auto;padding:0 20px}
   section{margin:18px 0;padding:18px;background:linear-gradient(180deg, rgba(10,14,16,0.35), rgba(10,14,16,0.2));border-radius:12px;border:1px solid rgba(0,255,149,0.03)}
   section h2{margin:0 0 14px;color:var(--neon);font-size:1.1rem}
   .subtitle{color:var(--muted);margin-bottom:10px}
 
-  /* Projects grid */
+  
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
   .card{
     background:var(--card);padding:16px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);
@@ -116,18 +113,18 @@
   .card .meta{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
   .tag{padding:6px 10px;background:rgba(0,0,0,0.3);border-radius:999px;color:var(--muted);font-weight:600;font-size:0.81rem}
 
-  /* Skills */
+  
   .skills{display:flex;flex-wrap:wrap;gap:10px}
   .skill{background:rgba(0,255,149,0.06);color:var(--neon);padding:8px 10px;border-radius:8px;font-weight:700}
 
-  /* Contact */
+ 
   .contact-list{list-style:none;padding:0;margin:0}
   .contact-list li{margin-bottom:8px;color:var(--muted)}
 
-  /* FOOTER */
+  
   footer{padding:24px 20px;text-align:center;color:var(--muted);margin-top:18px}
 
-  /* Responsive */
+  
   @media (max-width:900px){
     .hero{grid-template-columns:1fr; padding:14px}
     .navlinks{display:none}
@@ -154,7 +151,7 @@
   </div>
 </nav>
 
-<!-- HERO -->
+
 <section class="hero" aria-label="presentación">
   <div class="hero-left">
     <h1>Valentina Mendoza — Ingeniería en Ciberseguridad</h1>
@@ -182,16 +179,16 @@
   </aside>
 </section>
 
-<!-- MAIN CONTENT -->
+
 <main class="container">
 
-  <!-- Proyectos -->
+  
   <section id="proyectos" aria-labelledby="proyectos-title">
     <h2 id="proyectos-title">Proyectos Destacados</h2>
     <p class="subtitle">Proyectos de auditoría y pruebas en entornos controlados. Haz clic en "Ver" para abrir el reporte o el repositorio.</p>
 
     <div class="grid">
-      <!-- MitraScan -->
+      
       <article class="card">
         <h3>MitraScan — Auditoría Web Automatizada</h3>
         <p>Prototipo que automatiza escaneos web y genera reportes técnicos y ejecutivos en HTML. Integración de Nmap, Nikto y Nuclei + parser en Python. Alineado a NIST / ISO / OWASP / MITRE.</p>
@@ -203,7 +200,7 @@
         </div>
       </article>
 
-      <!-- DVWA -->
+      
       <article class="card">
         <h3>DVWA – Informe de auditoría</h3>
         <p>Auditoría controlada sobre DVWA (localhost). Identificación de indexación de directorios, configuración de cabeceras y exposición de backups. Informe con evidencias y mitigaciones.</p>
@@ -215,7 +212,7 @@
         </div>
       </article>
 
-      <!-- JuiceShop -->
+      
       <article class="card">
         <h3>OWASP Juice Shop — Caso de estudio</h3>
         <p>Pruebas en Juice Shop con hallazgos críticos. Se documentaron vectores de XSS, CSRF y configuraciones inseguras. Reporte técnico con pruebas reproductibles.</p>
@@ -227,7 +224,7 @@
         </div>
       </article>
 
-      <!-- Gruyere -->
+      
       <article class="card">
         <h3>Google Gruyere — Evaluación educativa</h3>
         <p>Informe de detección de cabeceras faltantes, HSTS ausente y configuraciones de seguridad. Ejecución y recomendaciones alineadas a ISO/OWASP.</p>
@@ -242,7 +239,7 @@
     </div>
   </section>
 
-  <!-- Skills -->
+  
   <section id="skills">
     <h2>Habilidades & Herramientas</h2>
     <p class="subtitle">Competencias técnicas y herramientas que uso habitualmente.</p>
@@ -260,7 +257,7 @@
     </div>
   </section>
 
-  <!-- Reportes / Writeups -->
+  
   <section id="reportes">
     <h2>Reportes & Writeups</h2>
     <p class="subtitle">Reportes públicos y writeups con evidencia, clasificación y recomendaciones.</p>
@@ -285,7 +282,7 @@
     </div>
   </section>
 
-  <!-- Blog / Certificaciones -->
+  
   <h2>Certificaciones</h2>
   <p class="subtitle">Cursos y certificaciones relevantes en ciberseguridad, redes y auditoría.</p>
 
@@ -307,14 +304,18 @@
     </ul>
   </section>
 
-  <!-- Contacto -->
+  
   <section id="contacto">
     <h2>Contacto</h2>
     <p class="subtitle">¿Quieres trabajar conmigo o revisar un reporte? Contáctame.</p>
     <ul class="contact-list">
       <li>Email: <a href="mailto:valentina.mendoza.matamala@gmail.com" style="color:var(--neon);text-decoration:none">valentina.mendoza.matamala@gmail.com</a></li>
       <li>LinkedIn: <a href="https://www.linkedin.com/in/valentina-mendoza" target="_blank" style="color:var(--neon);text-decoration:none">linkedin.com/in/valentina-mendoza</a></li>
-      <li>GitHub: <a href="GitHub:github.com/valentina-cybersec" target="_blank" style="color:var(--neon);text-decoration:none">github.com/s0l322</a></li>
+      <li>GitHub: <a href="https://github.com/valentina-cybersec" target="_blank" style="color:var(--neon);text-decoration:none">
+    github.com/valentina-cybersec
+  </a>
+</li>
+
       <li>Teléfono/WhatsApp: +56 9 6867 2169</li>
     </ul>
   </section>
