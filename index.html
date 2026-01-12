@@ -96,4 +96,177 @@ section{
   padding:18px;
   background:rgba(10,14,16,0.3);
   border-radius:12px;
-  border:1px solid rgb
+  border:1px solid rgba(0,255,149,0.03)
+}
+section h2{color:var(--neon)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.card{
+  background:var(--card);
+  padding:16px;
+  border-radius:10px;
+}
+.card h3{color:var(--neon)}
+.tag{
+  background:rgba(0,0,0,0.3);
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:0.8rem;
+  color:var(--muted);
+  margin-right:6px;
+}
+.skills{display:flex;flex-wrap:wrap;gap:10px}
+.skill{
+  background:rgba(0,255,149,0.06);
+  color:var(--neon);
+  padding:8px 10px;
+  border-radius:8px;
+  font-weight:700
+}
+footer{text-align:center;color:var(--muted);padding:24px}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .navlinks{display:none}
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="matrix"></canvas>
+
+<nav>
+  <div class="brand">
+    <div class="logo">VM</div>
+    <div>
+      <div class="title">Portafolio Profesional</div>
+      <div style="font-size:12px;color:var(--muted)">Valentina Mendoza</div>
+    </div>
+  </div>
+  <div class="navlinks">
+    <a href="#proyectos">Proyectos</a>
+    <a href="#skills">Habilidades</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <h1>Valentina Mendoza — Analista TI & Ciberseguridad Operacional Junior</h1>
+    <p class="subtitle">
+      Profesional TI con base en telecomunicaciones, redes e infraestructura, con experiencia en soporte TI,
+      administración de sistemas y continuidad operacional.<br><br>
+      Actualmente en transición a ciberseguridad operacional junior, con foco en auditoría web básica,
+      análisis de vulnerabilidades y gestión de incidentes.
+    </p>
+    <div class="cta-row">
+      <a class="btn" href="#proyectos">Ver proyectos</a>
+      <a class="ghost" href="https://valentina-cybersec.github.io/mitrascan-reports/" target="_blank">
+        Ver MitraScan (reportes)
+      </a>
+    </div>
+  </div>
+
+  <aside class="hero-right">
+    <div class="mini-card">
+      <h4>MitraScan</h4>
+      <p class="subtitle">
+        Auditoría web automatizada con Nmap, Nikto y Nuclei.
+        Validado en entornos de prueba controlados.
+      </p>
+    </div>
+    <div class="mini-card">
+      <h4>Stack</h4>
+      <p class="subtitle">Kali Linux · Python · Bash · Nmap · Nikto · Nuclei · Git</p>
+    </div>
+    <div class="mini-card">
+      <h4>Disponibilidad</h4>
+      <p class="subtitle">
+        Disponible para roles junior, prácticas profesionales y proyectos en entornos autorizados y controlados.
+      </p>
+    </div>
+  </aside>
+</section>
+
+<main class="container">
+
+<section id="proyectos">
+  <h2>Proyectos Destacados</h2>
+  <p class="subtitle">Proyectos prácticos desarrollados en entornos controlados.</p>
+
+  <div class="grid">
+    <article class="card">
+      <h3>MitraScan — Auditoría Web Automatizada</h3>
+      <p>
+        Prototipo que automatiza escaneos web y genera reportes técnicos en HTML,
+        integrando Nmap, Nikto y Nuclei con parser en Python.
+        Alineado a buenas prácticas de NIST, OWASP y MITRE para auditorías web básicas.
+      </p>
+      <div>
+        <a class="tag" href="https://valentina-cybersec.github.io/mitrascan-reports/" target="_blank">Ver reportes</a>
+        <span class="tag">Python</span>
+        <span class="tag">Bash</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Habilidades & Herramientas</h2>
+  <div class="skills">
+    <div class="skill">Nmap</div>
+    <div class="skill">Nikto</div>
+    <div class="skill">Nuclei</div>
+    <div class="skill">Python</div>
+    <div class="skill">Bash</div>
+    <div class="skill">Kali Linux</div>
+    <div class="skill">OWASP Top 10</div>
+    <div class="skill">MITRE ATT&CK</div>
+    <div class="skill">NIST SP 800-115</div>
+  </div>
+</section>
+
+<section id="contacto">
+  <h2>Contacto</h2>
+  <p class="subtitle">
+    ¿Te interesa revisar un proyecto o conversar sobre oportunidades TI y ciberseguridad?
+  </p>
+  <ul style="list-style:none;padding:0;color:var(--muted)">
+    <li>Email: <a href="mailto:valentina.mendoza.matamala@gmail.com" style="color:var(--neon)">valentina.mendoza.matamala@gmail.com</a></li>
+    <li>LinkedIn: <a href="https://www.linkedin.com/in/valentina-mendoza-9b1a4493/" target="_blank" style="color:var(--neon)">linkedin.com/in/valentina-mendoza</a></li>
+    <li>GitHub: <a href="https://github.com/valentina-cybersec" target="_blank" style="color:var(--neon)">github.com/valentina-cybersec</a></li>
+    <li>WhatsApp: +56 9 6867 2169</li>
+  </ul>
+</section>
+
+</main>
+
+<footer>
+© 2025 Valentina Mendoza — Portafolio Profesional · Hecho en Chile
+</footer>
+
+<script>
+const canvas=document.getElementById('matrix');
+const ctx=canvas.getContext('2d');
+function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight}
+resize();window.addEventListener('resize',resize);
+const cols=Math.floor(window.innerWidth/14);
+const drops=new Array(cols).fill(1);
+const letters='01';
+function draw(){
+  ctx.fillStyle='rgba(6,9,13,0.18)';
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle='#00ff95';
+  ctx.font='12px monospace';
+  for(let i=0;i<drops.length;i++){
+    const t=letters[Math.floor(Math.random()*letters.length)];
+    ctx.fillText(t,i*14,drops[i]*14);
+    if(drops[i]*14>canvas.height&&Math.random()>0.975)drops[i]=0;
+    drops[i]++;
+  }
+}
+setInterval(draw,60);
+</script>
+
+</body>
+</html>
