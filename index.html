@@ -3,292 +3,97 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Valentina Mendoza — Portafolio de Ciberseguridad</title>
-<meta name="description" content="Portafolio profesional de Valentina Mendoza - pentesting, auditoría web, MitraScan y writeups." />
-<link rel="icon" href="favicon.ico" />
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>Valentina Mendoza | Analista TI & Ciberseguridad Operacional Junior</title>
+<meta name="description" content="Portafolio profesional de Valentina Mendoza. Analista TI con base en telecomunicaciones, redes e infraestructura, en transición a ciberseguridad operacional junior." />
+
+<link rel="icon" href="favicon.ico" />
+<link href="https://fonts.googleapis.com/css2?familyInter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-  :root{
-    --bg:#06090d;
-    --panel:#0f1418;
-    --muted:#99bfb0;
-    --neon:#00ff95;
-    --card:#0b1114;
-    --glass: rgba(10,15,20,0.6);
-    --accent-shadow: 0 6px 18px rgba(0,255,149,0.06);
-    --maxwidth:1100px;
-  }
-  *{box-sizing:border-box}
-  html,body{height:100%}
-  body{
-    margin:0;
-    font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
-    background:var(--bg);
-    color:#d8e9e2;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    line-height:1.45;
-  }
+:root{
+  --bg:#06090d;
+  --panel:#0f1418;
+  --muted:#99bfb0;
+  --neon:#00ff95;
+  --card:#0b1114;
+  --glass: rgba(10,15,20,0.6);
+  --accent-shadow: 0 6px 18px rgba(0,255,149,0.06);
+  --maxwidth:1100px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter,system-ui,Segoe UI,Roboto,Arial;
+  background:var(--bg);
+  color:#d8e9e2;
+  line-height:1.45;
+}
+#matrix{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  opacity:0.12;
+  filter: blur(1px) contrast(1.1);
+}
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 20px;
+  background:linear-gradient(180deg, rgba(5,8,10,0.55), rgba(5,8,10,0.25));
+  border-bottom:1px solid rgba(0,255,149,0.06);
+  position:sticky;
+  top:0;
+  backdrop-filter: blur(6px);
+  z-index:40;
+}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{
+  width:40px;height:40px;border-radius:8px;
+  background:linear-gradient(135deg,#002f1a,#00ff95);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;color:#01110a
+}
+.title{font-weight:700;color:var(--neon)}
+.navlinks a{color:var(--muted);margin-left:16px;text-decoration:none;font-weight:600}
+.navlinks a:hover{color:var(--neon)}
 
-  #matrix{
-    position:fixed;
-    inset:0;
-    z-index:-1;
-    opacity:0.12;
-    filter: blur(1px) contrast(1.1);
-  }
+.hero{
+  max-width:var(--maxwidth);
+  margin:28px auto;
+  padding:28px 20px;
+  display:grid;
+  grid-template-columns:1fr 360px;
+  gap:28px;
+}
+.hero-left h1{margin:0;color:var(--neon);font-size:2.1rem}
+.subtitle{color:var(--muted);margin-top:10px}
+.cta-row{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  background:var(--neon);
+  color:#05110a;
+  padding:10px 14px;border-radius:8px;
+  font-weight:700;text-decoration:none;
+}
+.ghost{
+  border:1px solid rgba(255,255,255,0.04);
+  color:var(--muted);
+  padding:9px 12px;border-radius:8px;text-decoration:none
+}
+.hero-right{
+  border:1px solid rgba(0,255,149,0.04);
+  border-radius:12px;
+  padding:16px;
+}
+.mini-card{margin-bottom:10px}
+.mini-card h4{margin:6px 0;color:var(--neon)}
 
-
-  nav{
-    width:100%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:14px 20px;
-    background:linear-gradient(180deg, rgba(5,8,10,0.55), rgba(5,8,10,0.25));
-    border-bottom:1px solid rgba(0,255,149,0.06);
-    position:sticky;
-    top:0;
-    backdrop-filter: blur(6px);
-    z-index:40;
-  }
-  .brand{display:flex;align-items:center;gap:12px}
-  .brand .logo{
-    width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,#002f1a,#00ff95);display:flex;align-items:center;justify-content:center;font-weight:700;color:#01110a
-  }
-  .brand .title{font-weight:700;color:var(--neon);letter-spacing:1px}
-  .navlinks{display:flex;gap:18px;align-items:center}
-  .navlinks a{color:var(--muted);text-decoration:none;padding:6px 8px;border-radius:6px;font-weight:600}
-  .navlinks a:hover{color:var(--neon);text-shadow:0 0 8px rgba(0,255,149,0.12)}
-
-  .hero{
-    max-width:var(--maxwidth);
-    margin:28px auto 8px;
-    padding:28px 20px;
-    display:grid;
-    grid-template-columns:1fr 360px;
-    gap:28px;
-    align-items:center;
-  }
-  .hero-left h1{
-    margin:0;
-    font-size:2.1rem;
-    color:var(--neon);
-    letter-spacing:1px;
-  }
-  .hero-left p{color:var(--muted);margin-top:10px}
-  .cta-row{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
-  .btn{
-    background:var(--neon);
-    color:#05110a;
-    padding:10px 14px;border-radius:8px;font-weight:700;text-decoration:none;display:inline-block;
-    box-shadow:0 6px 18px rgba(0,255,149,0.12);
-  }
-  .ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted);padding:9px 12px;border-radius:8px;text-decoration:none}
-
-  .hero-right{
-    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    border-radius:12px;padding:16px;border:1px solid rgba(0,255,149,0.04);
-  }
-  .mini-card{background:rgba(0,0,0,0.2);padding:10px;border-radius:8px;margin-bottom:10px}
-  .mini-card h4{margin:6px 0;color:var(--neon)}
-
-  
-  .container{max-width:var(--maxwidth);margin:18px auto;padding:0 20px}
-  section{margin:18px 0;padding:18px;background:linear-gradient(180deg, rgba(10,14,16,0.35), rgba(10,14,16,0.2));border-radius:12px;border:1px solid rgba(0,255,149,0.03)}
-  section h2{margin:0 0 14px;color:var(--neon);font-size:1.1rem}
-  .subtitle{color:var(--muted);margin-bottom:10px}
-
-  
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-  .card{
-    background:var(--card);padding:16px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);
-    box-shadow:var(--accent-shadow);transition:transform .18s ease,box-shadow .18s ease;
-  }
-  .card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(0,255,149,0.08);border-color:rgba(0,255,149,0.12)}
-  .card h3{margin:0;color:var(--neon);font-size:1.05rem}
-  .card p{color:var(--muted);font-size:0.95rem;margin-top:8px}
-  .card .meta{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
-  .tag{padding:6px 10px;background:rgba(0,0,0,0.3);border-radius:999px;color:var(--muted);font-weight:600;font-size:0.81rem}
-
-  
-  .skills{display:flex;flex-wrap:wrap;gap:10px}
-  .skill{background:rgba(0,255,149,0.06);color:var(--neon);padding:8px 10px;border-radius:8px;font-weight:700}
-
- 
-  .contact-list{list-style:none;padding:0;margin:0}
-  .contact-list li{margin-bottom:8px;color:var(--muted)}
-
-  
-  footer{padding:24px 20px;text-align:center;color:var(--muted);margin-top:18px}
-
-  
-  @media (max-width:900px){
-    .hero{grid-template-columns:1fr; padding:14px}
-    .navlinks{display:none}
-  }
-</style>
-</head>
-<body>
-
-<canvas id="matrix"></canvas>
-
-<nav>
-  <div class="brand">
-    <div class="logo">MS</div>
-    <div>
-      <div class="title">MitraScan</div>
-      <div style="font-size:12px;color:var(--muted)">Valentina Mendoza — Ciberseguridad</div>
-    </div>
-  </div>
-  <div class="navlinks">
-    <a href="#proyectos">Proyectos</a>
-    <a href="#skills">Habilidades</a>
-    <a href="#reportes">Reportes</a>
-    <a href="#contacto">Contacto</a>
-  </div>
-</nav>
-
-
-<section class="hero" aria-label="presentación">
-  <div class="hero-left">
-    <h1>Valentina Mendoza — Ingeniería en Ciberseguridad</h1>
-    <p class="subtitle">Técnica en Telecomunicaciones y estudiante de Ingeniería en Ciberseguridad. Me especializo en auditoría web automatizada, pruebas de penetración y análisis forense. Aquí verás mis proyectos, reportes y writeups.</p>
-    <div class="cta-row">
-      <a class="btn" href="#proyectos">Ver proyectos</a>
-      <a class="ghost" href="https://valentina-cybersec.github.io/mitrascan-reports/" target="_blank">Ver MitraScan (reportes)</a>
-    </div>
-  </div>
-
-  <aside class="hero-right" aria-label="resumen">
-    <div class="mini-card">
-      <h4>MitraScan</h4>
-      <div style="color:var(--muted)">Auditoría web automatizada — Nmap, Nikto, Nuclei, Parser Python. Validado en 4 entornos de prueba.</div>
-    </div>
-    <div class="mini-card">
-      <h4>Stack</h4>
-      <div style="color:var(--muted)">Kali Linux · Python · Bash · Nmap · Burp · Nuclei · Git</div>
-    </div>
-    <div class="mini-card">
-      <h4>Disponible</h4>
-      <div style="color:var(--muted)">Prácticas, proyectos freelance y bug bounty (responsable y autorizado).</div>
-    </div>
-  </aside>
-</section>
-
-
-<main class="container">
-
-  
-  <section id="proyectos" aria-labelledby="proyectos-title">
-    <h2 id="proyectos-title">Proyectos Destacados</h2>
-    <p class="subtitle">Proyectos de auditoría y pruebas en entornos controlados. Haz clic en "Ver" para abrir el reporte o el repositorio.</p>
-
-    <div class="grid">
-      
-      <article class="card">
-        <h3>MitraScan — Auditoría Web Automatizada</h3>
-        <p>Prototipo que automatiza escaneos web y genera reportes técnicos y ejecutivos en HTML. Integración de Nmap, Nikto y Nuclei + parser en Python. Alineado a NIST / ISO / OWASP / MITRE.</p>
-        <div class="meta">
-          <a class="tag" href="https://valentina-cybersec.github.io/mitrascan-reports/" target="_blank">Ver reportes</a>
-          <span class="tag">Python</span>
-          <span class="tag">Bash</span>
-        </div>
-      </article>
-  </section>
-
-  
-  <section id="skills">
-    <h2>Habilidades & Herramientas</h2>
-    <p class="subtitle">Competencias técnicas y herramientas que uso habitualmente.</p>
-    <div class="skills" aria-hidden="false">
-      <div class="skill">Nmap</div>
-      <div class="skill">Nikto</div>
-      <div class="skill">Nuclei</div>
-      <div class="skill">Burp Suite</div>
-      <div class="skill">Python</div>
-      <div class="skill">Bash</div>
-      <div class="skill">Kali Linux</div>
-      <div class="skill">OWASP Top10</div>
-      <div class="skill">MITRE ATT&CK</div>
-      <div class="skill">NIST SP 800-115</div>
-    </div>
-  </section>
-
-  
-  <h2>Certificaciones</h2>
-  <p class="subtitle">Cursos y certificaciones relevantes en ciberseguridad, redes y auditoría.</p>
-
-  <ul style="color:var(--muted);line-height:1.6; margin-left: 10px;">
-    
-    <li><strong>Workshop: Roles y Responsabilidades de la Alta Dirección en Ciberseguridad</strong> — USACH (Attendee)</li>
-    
-    <li><strong>Fundamentos de Auditoría a la Ciberseguridad v5</strong> — USACH</li>
-
-    <li><strong>Junior Cybersecurity Analyst Career Path</strong> — CISCO</li>
-
-    <li><strong>Ethical Hacker (Intro)</strong> — CISCO</li>
-
-    <li><strong>Networking Basics</strong> — CISCO</li>
-
-  </ul>
-</section>
-</li>
-    </ul>
-  </section>
-
-  
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <p class="subtitle">¿Quieres trabajar conmigo o revisar un reporte? Contáctame.</p>
-    <ul class="contact-list">
-      <li>Email: <a href="mailto:valentina.mendoza.matamala@gmail.com" style="color:var(--neon);text-decoration:none">valentina.mendoza.matamala@gmail.com</a></li>
-      <li>LinkedIn: <a href="https://www.linkedin.com/in/valentina-mendoza-9b1a4493/" target="_blank" style="color:var(--neon);text-decoration:none">linkedin.com/in/valentina-mendoza</a></li>
-      <li>GitHub: <a href="https://github.com/valentina-cybersec" target="_blank" style="color:var(--neon);text-decoration:none">
-    github.com/valentina-cybersec
-  </a>
-</li>
-
-      <li>Teléfono/WhatsApp: +56 9 6867 2169</li>
-    </ul>
-  </section>
-
-</main>
-
-<footer>
-  © 2025 Valentina Mendoza — MitraScan · Auditoría Web Automatizada · Hecho con ❤️ en Chile
-</footer>
-
-<script>
-  /* Matrix background (simple, lightweight) */
-  const canvas = document.getElementById('matrix');
-  const ctx = canvas.getContext('2d');
-  function resize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-  resize();
-  window.addEventListener('resize', resize);
-
-  const cols = Math.floor(window.innerWidth / 14);
-  const drops = new Array(cols).fill(1);
-  const letters = '01';
-  function draw(){
-    ctx.fillStyle = 'rgba(6,9,13,0.18)';
-    ctx.fillRect(0,0,canvas.width,canvas.height);
-    ctx.fillStyle = '#00ff95';
-    ctx.font = '12px monospace';
-    for(let i=0;i<drops.length;i++){
-      const text = letters[Math.floor(Math.random() * letters.length)];
-      ctx.fillText(text, i*14, drops[i]*14);
-      if(drops[i]*14 > canvas.height && Math.random() > 0.975) drops[i] = 0;
-      drops[i]++;
-    }
-  }
-  setInterval(draw, 60);
-</script>
-
-</body>
-</html>
+.container{max-width:var(--maxwidth);margin:auto;padding:0 20px}
+section{
+  margin:18px 0;
+  padding:18px;
+  background:rgba(10,14,16,0.3);
+  border-radius:12px;
+  border:1px solid rgb
