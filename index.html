@@ -8,7 +8,7 @@
 <meta name="description" content="Portafolio profesional de Valentina Mendoza. Analista TI con base en telecomunicaciones, redes e infraestructura, en transición a ciberseguridad operacional junior." />
 
 <link rel="icon" href="favicon.ico" />
-<link href="https://fonts.googleapis.com/css2?familyInter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -104,8 +104,11 @@ section h2{color:var(--neon)}
   background:var(--card);
   padding:16px;
   border-radius:10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.card h3{color:var(--neon)}
+.card h3{color:var(--neon); margin-top: 0;}
 .tag{
   background:rgba(0,0,0,0.3);
   padding:6px 10px;
@@ -113,6 +116,7 @@ section h2{color:var(--neon)}
   font-size:0.8rem;
   color:var(--muted);
   margin-right:6px;
+  text-decoration: none;
 }
 .skills{display:flex;flex-wrap:wrap;gap:10px}
 .skill{
@@ -164,10 +168,19 @@ footer{text-align:center;color:var(--muted);padding:24px}
       <a class="ghost" href="https://valentina-cybersec.github.io/mitrascan-reports/" target="_blank">
         Ver MitraScan (reportes)
       </a>
+      <a class="ghost" href="Plan%20De%20Respuesta%20Y%20Mitigaci%C3%B3n%20Ante%20Incidentes%20De%20Seguridad%20Inform%C3%A1tica_Valentina_Mendoza.pdf" target="_blank" style="border-color: var(--neon); color: var(--neon);">
+        📄 Ver Plan de Respuesta (IRP)
+      </a>
     </div>
   </div>
 
   <aside class="hero-right">
+    <div class="mini-card">
+      <h4>Incident Response</h4>
+      <p class="subtitle">
+        Diseño de marcos operativos bajo NIST SP 800-61 para la mitigación de crisis cibernéticas.
+      </p>
+    </div>
     <div class="mini-card">
       <h4>MitraScan</h4>
       <p class="subtitle">
@@ -176,14 +189,8 @@ footer{text-align:center;color:var(--muted);padding:24px}
       </p>
     </div>
     <div class="mini-card">
-      <h4>Stack</h4>
-      <p class="subtitle">Kali Linux · Python · Bash · Nmap · Nikto · Nuclei · Git</p>
-    </div>
-    <div class="mini-card">
-      <h4>Disponibilidad</h4>
-      <p class="subtitle">
-        Disponible para roles junior, prácticas profesionales y proyectos en entornos autorizados y controlados.
-      </p>
+      <h4>Stack Técnico</h4>
+      <p class="subtitle">Kali Linux · Python · Bash · NIST Framework · GRC · SIEM/SOC Intro</p>
     </div>
   </aside>
 </section>
@@ -192,20 +199,38 @@ footer{text-align:center;color:var(--muted);padding:24px}
 
 <section id="proyectos">
   <h2>Proyectos Destacados</h2>
-  <p class="subtitle">Proyectos prácticos desarrollados en entornos controlados.</p>
+  <p class="subtitle">Marcos de trabajo y herramientas desarrolladas para la seguridad operativa.</p>
 
   <div class="grid">
     <article class="card">
-      <h3>MitraScan — Auditoría Web Automatizada</h3>
-      <p>
-        Prototipo que automatiza escaneos web y genera reportes técnicos en HTML,
-        integrando Nmap, Nikto y Nuclei con parser en Python.
-        Alineado a buenas prácticas de NIST, OWASP y MITRE para auditorías web básicas.
-      </p>
       <div>
+        <h3>MitraScan — Auditoría Web Automatizada</h3>
+        <p>
+          Prototipo que automatiza escaneos web y genera reportes técnicos en HTML,
+          integrando Nmap, Nikto y Nuclei con parser en Python.
+          Alineado a buenas prácticas de NIST, OWASP y MITRE.
+        </p>
+      </div>
+      <div style="margin-top: 15px;">
         <a class="tag" href="https://valentina-cybersec.github.io/mitrascan-reports/" target="_blank">Ver reportes</a>
         <span class="tag">Python</span>
         <span class="tag">Bash</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <div>
+        <h3>Incident Response & Mitigation Plan (IRP)</h3>
+        <p>
+          Marco estratégico para la gestión de incidentes basado en <b>NIST SP 800-61</b>. 
+          Incluye matrices de criticidad, protocolos de comunicación corporativa y planes de acción ante Ransomware y Phishing.
+        </p>
+      </div>
+      <div style="margin-top: 15px;">
+        <a class="tag" href="Plan%20De%20Respuesta%20Y%20Mitigaci%C3%B3n%20Ante%20Incidentes%20De%20Seguridad%20Inform%C3%A1tica_Valentina_Mendoza.pdf" target="_blank">Abrir PDF</a>
+        <span class="tag">NIST 800-61</span>
+        <span class="tag">GRC</span>
+        <span class="tag">Cyber-Resilience</span>
       </div>
     </article>
   </div>
@@ -222,7 +247,9 @@ footer{text-align:center;color:var(--muted);padding:24px}
     <div class="skill">Kali Linux</div>
     <div class="skill">OWASP Top 10</div>
     <div class="skill">MITRE ATT&CK</div>
-    <div class="skill">NIST SP 800-115</div>
+    <div class="skill">NIST SP 800-61 (IR)</div>
+    <div class="skill">Gestión de Crisis</div>
+    <div class="skill">Continuidad Operacional</div>
   </div>
 </section>
 
@@ -242,7 +269,7 @@ footer{text-align:center;color:var(--muted);padding:24px}
 </main>
 
 <footer>
-© 2025 Valentina Mendoza — Portafolio Profesional · Hecho en Chile
+© 2026 Valentina Mendoza — Portafolio Profesional · Hecho en Chile
 </footer>
 
 <script>
