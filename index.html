@@ -36,44 +36,52 @@ nav{
 .title{font-weight:700;color:var(--neon)}
 .navlinks a{color:var(--muted);margin-left:16px;text-decoration:none;font-weight:600}
 .navlinks a:hover{color:var(--neon)}
+
 .hero{
   max-width:var(--maxwidth);margin:28px auto;padding:28px 20px;
   display:grid;grid-template-columns:1fr 360px;gap:28px;
 }
 .hero-left h1{margin:0;color:var(--neon);font-size:2.1rem}
 .subtitle{color:var(--muted);margin-top:10px}
-.hero-right{border:1px solid rgba(0,255,149,0.04);border-radius:12px;padding:16px;}
-.mini-card{margin-bottom:10px}
-.mini-card h4{margin:6px 0;color:var(--neon)}
+
 .container{max-width:var(--maxwidth);margin:auto;padding:0 20px}
 section{
   margin:18px 0;padding:24px;background:rgba(10,14,16,0.3);
   border-radius:12px;border:1px solid rgba(0,255,149,0.03)
 }
 section h2{color:var(--neon); border-bottom: 1px solid rgba(0,255,149,0.1); padding-bottom: 10px;}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-.card{background:var(--card);padding:16px;border-radius:10px;display: flex;flex-direction: column;justify-content: space-between;}
-.tag{background:rgba(0,0,0,0.3);padding:6px 10px;border-radius:999px;font-size:0.8rem;color:var(--muted);margin-right:6px;text-decoration: none;}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.card{background:var(--card);padding:20px;border-radius:10px;border: 1px solid rgba(0,255,149,0.05); transition: 0.3s;}
+.card:hover{border-color: var(--neon); transform: translateY(-3px);}
+.card h3{margin-top:0; color:var(--neon)}
+
+.tag{background:rgba(0,0,0,0.4);padding:5px 10px;border-radius:4px;font-size:0.75rem;color:var(--neon);margin-right:5px;border: 1px solid rgba(0,255,149,0.2)}
 .skills{display:flex;flex-wrap:wrap;gap:10px}
 .skill{background:rgba(0,255,149,0.06);color:var(--neon);padding:8px 10px;border-radius:8px;font-weight:700}
+
 .irp-detail{background:rgba(0,0,0,0.2); padding:15px; border-radius:8px; margin-top:10px; font-size:0.9rem; border-left: 2px solid var(--neon)}
 table{width:100%; border-collapse: collapse; margin: 15px 0;}
 th, td{border: 1px solid rgba(0,255,149,0.1); padding: 8px; text-align: left;}
 th{color: var(--neon); background: rgba(0,255,149,0.05);}
-footer{text-align:center;color:var(--muted);padding:24px}
+
+.btn-small{display:inline-block; margin-top:15px; padding:8px 12px; background:var(--neon); color:#05110a; text-decoration:none; border-radius:4px; font-weight:bold; font-size:0.85rem}
+
+footer{text-align:center;color:var(--muted);padding:40px}
 @media(max-width:900px){.hero{grid-template-columns:1fr}.navlinks{display:none}}
 </style>
 </head>
 <body>
 <canvas id="matrix"></canvas>
+
 <nav>
   <div class="brand">
     <div class="logo">VM</div>
-    <div><div class="title">Portafolio Profesional</div><div style="font-size:12px;color:var(--muted)">Valentina Mendoza</div></div>
+    <div><div class="title">Portafolio Ciberseguridad</div><div style="font-size:12px;color:var(--muted)">Valentina Mendoza</div></div>
   </div>
   <div class="navlinks">
     <a href="#proyectos">Proyectos</a>
-    <a href="#irp">Plan IRP</a>
+    <a href="#irp">Plan de Respuesta</a>
     <a href="#skills">Habilidades</a>
     <a href="#contacto">Contacto</a>
   </div>
@@ -81,81 +89,91 @@ footer{text-align:center;color:var(--muted);padding:24px}
 
 <section class="hero">
   <div class="hero-left">
-    <h1>Valentina Mendoza — Analista TI & Ciberseguridad Operacional Junior</h1>
+    <h1>Valentina Mendoza — Analista TI & Ciberseguridad Operacional</h1>
     <p class="subtitle">
-      Profesional TI con base en telecomunicaciones, redes e infraestructura.
-      Actualmente en transición a ciberseguridad operacional junior, con foco en auditoría web,
-      análisis de vulnerabilidades y gestión de incidentes.
+      Especialista en infraestructura con foco en Ciberseguridad. <br>
+      Desarrollo de marcos estratégicos (NIST 800-61) y auditoría web automatizada.
     </p>
-    <div style="margin-top: 20px;">
-        <a href="#irp" style="background:var(--neon); color:#05110a; padding:10px 15px; border-radius:8px; text-decoration:none; font-weight:700;">Leer Plan de Respuesta</a>
+    <div style="margin-top:20px; display:flex; gap:10px">
+        <a href="#proyectos" style="background:var(--neon); color:#05110a; padding:10px 15px; border-radius:8px; text-decoration:none; font-weight:700;">Ver Proyectos</a>
+        <a href="#contacto" style="border:1px solid var(--neon); color:var(--neon); padding:10px 15px; border-radius:8px; text-decoration:none;">Contacto</a>
     </div>
   </div>
-  <aside class="hero-right">
-    <div class="mini-card"><h4>Incident Response</h4><p class="subtitle">Diseño de marcos operativos bajo NIST SP 800-61.</p></div>
-    <div class="mini-card"><h4>MitraScan</h4><p class="subtitle">Auditoría web automatizada con Nmap y Nuclei.</p></div>
-    <div class="mini-card"><h4>Stack Técnico</h4><p class="subtitle">Kali Linux · Python · Bash · NIST · GRC</p></div>
+  <aside style="background:rgba(0,255,149,0.02); border:1px solid rgba(0,255,149,0.1); border-radius:12px; padding:20px;">
+    <h4 style="color:var(--neon); margin-top:0">Foco Profesional</h4>
+    <p style="font-size:0.9rem; color:var(--muted)">
+      • Gestión de Incidentes<br>
+      • Análisis de Vulnerabilidades<br>
+      • Seguridad en Infraestructura<br>
+      • Continuidad de Negocio
+    </p>
   </aside>
 </section>
 
 <main class="container">
-  <section id="irp">
-    <h2>📄 Plan de Respuesta y Mitigación (Municipalidad Cerro Navia)</h2>
-    <p class="subtitle">Marco estratégico basado en <b>NIST SP 800-61</b> para la gestión de crisis cibernéticas.</p>
-    
-    <div class="irp-detail">
-        <h3>1. Análisis de Riesgos</h3>
-        <table>
-            <tr><th>Riesgo</th><th>Impacto</th><th>Nivel</th></tr>
-            <tr><td>Phishing a funcionarios</td><td>Alto</td><td style="color:#ff4d4d">Crítico</td></tr>
-            <tr><td>Malware / Ransomware</td><td>Alto</td><td style="color:orange">Alto</td></tr>
-            <tr><td>Fuga de datos personales</td><td>Alto</td><td style="color:orange">Alto</td></tr>
-        </table>
-        
-        <h3>2. Etapas de Respuesta</h3>
-        <p><b>Preparación:</b> Documentación de normas y entrenamiento a usuarios.<br>
-        <b>Contención:</b> Aislamiento de dispositivos y segmentación temporal de red.<br>
-        <b>Recuperación:</b> Uso de <b>Xen Orchestra (XCP-ng)</b> con regla de respaldo 3-2-1.</p>
-        
-        <h3>3. Infraestructura Crítica</h3>
-        <p>Servicios redundantes en clusters: <i>xcp-ng1</i> (Bases de datos), <i>xcp-ng4</i> (Active Directory), <i>xcp-ng5/6</i> (DNS).</p>
-    </div>
-  </section>
 
   <section id="proyectos">
     <h2>Proyectos Destacados</h2>
     <div class="grid">
       <article class="card">
-        <h3>MitraScan — Auditoría Web</h3>
-        <p>Automatización de escaneos web con reportes técnicos en HTML. Alineado a OWASP y MITRE.</p>
-        <div style="margin-top:15px;"><span class="tag">Python</span><span class="tag">Bash</span></div>
+        <h3>MitraScan — Reportes de Auditoría</h3>
+        <p>Proyecto de título centrado en la automatización de escaneos de vulnerabilidades web. Generación de reportes técnicos detallados basados en herramientas open-source.</p>
+        <div><span class="tag">Nmap</span><span class="tag">Nuclei</span><span class="tag">Security Reports</span></div>
+        <a href="https://valentina-cybersec.github.io/mitrascan-reports/" target="_blank" class="btn-small">Ver Reportes en Vivo</a>
       </article>
+
       <article class="card">
-        <h3>Gestión de Continuidad</h3>
-        <p>Implementación de políticas de respaldo y recuperación ante desastres en entornos municipales.</p>
-        <div style="margin-top:15px;"><span class="tag">GRC</span><span class="tag">ISO 27001</span></div>
+        <h3>Infraestructura de Respaldo</h3>
+        <p>Configuración y gestión de entornos virtualizados bajo <b>Xen Orchestra</b>, aplicando la regla 3-2-1 para garantizar la disponibilidad de datos institucionales.</p>
+        <div><span class="tag">XCP-ng</span><span class="tag">Disaster Recovery</span></div>
       </article>
     </div>
   </section>
 
+  <section id="irp">
+    <h2>📄 Plan de Respuesta ante Incidentes (IRP)</h2>
+    <p class="subtitle">Marco operativo para la Municipalidad de Cerro Navia basado en <b>NIST SP 800-61</b>.</p>
+    
+    <div class="irp-detail">
+        <h3>Resumen Ejecutivo</h3>
+        <p>Este plan establece los protocolos para mitigar riesgos críticos identificados en la gestión pública, asegurando el cumplimiento de la <b>Ley N° 21.663</b> y la protección de datos personales.</p>
+        
+        <table>
+            <tr><th>Amenaza</th><th>Impacto</th><th>Nivel de Riesgo</th></tr>
+            <tr><td>Phishing a funcionarios</td><td>Alto</td><td style="color:#ff4d4d">Crítico</td></tr>
+            <tr><td>Ransomware / Malware</td><td>Alto</td><td style="color:orange">Alto</td></tr>
+            <tr><td>Fuga de Información</td><td>Alto</td><td style="color:orange">Alto</td></tr>
+        </table>
+        
+        <h3>Fases de Acción</h3>
+        <p>• <b>Preparación:</b> Entrenamiento y monitoreo preventivo.<br>
+           • <b>Contención:</b> Aislamiento de red y cierre de accesos remotos.<br>
+           • <b>Erradicación:</b> Limpieza de sistemas y parchado de vulnerabilidades.<br>
+           • <b>Recuperación:</b> Restauración de servicios críticos (DNS, Active Directory).</p>
+    </div>
+  </section>
+
   <section id="skills">
-    <h2>Habilidades & Herramientas</h2>
+    <h2>Habilidades Técnicas</h2>
     <div class="skills">
-      <div class="skill">Nmap</div><div class="skill">Python</div><div class="skill">Kali Linux</div>
-      <div class="skill">OWASP Top 10</div><div class="skill">NIST 800-61</div><div class="skill">Xen Orchestra</div>
+      <div class="skill">NIST SP 800-61</div><div class="skill">ISO 27001</div><div class="skill">Python</div>
+      <div class="skill">Kali Linux</div><div class="skill">Wazuh SIEM</div><div class="skill">Xen Orchestra</div>
+      <div class="skill">Redes LAN/WAN</div><div class="skill">Auditoría Web</div>
     </div>
   </section>
 
   <section id="contacto">
     <h2>Contacto</h2>
+    <p class="subtitle">¿Interesado en mi perfil técnico? Conectemos.</p>
     <ul style="list-style:none;padding:0;color:var(--muted)">
-      <li>Email: <a href="mailto:valentina.mendoza.matamala@gmail.com" style="color:var(--neon)">valentina.mendoza.matamala@gmail.com</a></li>
-      <li>LinkedIn: <a href="https://www.linkedin.com/in/valentina-mendoza-9b1a4493/" target="_blank" style="color:var(--neon)">linkedin.com/in/valentina-mendoza</a></li>
+      <li>📧 <a href="mailto:valentina.mendoza.matamala@gmail.com" style="color:var(--neon)">valentina.mendoza.matamala@gmail.com</a></li>
+      <li>🔗 <a href="https://www.linkedin.com/in/valentina-mendoza-9b1a4493/" target="_blank" style="color:var(--neon)">LinkedIn</a></li>
+      <li>💻 <a href="https://github.com/valentina-cybersec" target="_blank" style="color:var(--neon)">GitHub</a></li>
     </ul>
   </section>
 </main>
 
-<footer>© 2026 Valentina Mendoza — Hecho en Chile</footer>
+<footer>© 2026 Valentina Mendoza — Analista en Ciberseguridad · Chile</footer>
 
 <script>
 const canvas=document.getElementById('matrix'),ctx=canvas.getContext('2d');
