@@ -3,175 +3,81 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Valentina Mendoza | Analista TI & Ciberseguridad Operacional Junior</title>
+<title>Valentina Mendoza | Analista TI & Ciberseguridad</title>
 <link rel="icon" href="favicon.png" type="image/png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#06090d;--panel:#0f1418;--muted:#99bfb0;--neon:#00ff95;--card:#0b1114;--maxwidth:1100px;
-}
+:root{--bg:#06090d;--muted:#99bfb0;--neon:#00ff95;--card:#0b1114;--maxwidth:1100px}
 *{box-sizing:border-box}
-body{margin:0;font-family:Inter,sans-serif;background:var(--bg);color:#d8e9e2;line-height:1.6;}
-#matrix{position:fixed;inset:0;z-index:-1;opacity:0.12;filter: blur(1px) contrast(1.1);}
-
-nav{
-  display:flex;justify-content:space-between;align-items:center;padding:14px 20px;
-  background:rgba(5,8,10,0.8);border-bottom:1px solid rgba(0,255,149,0.06);position:sticky;top:0;backdrop-filter: blur(6px);z-index:40;
-}
+body{margin:0;font-family:Inter,sans-serif;background:var(--bg);color:#d8e9e2;line-height:1.6}
+#matrix{position:fixed;inset:0;z-index:-1;opacity:0.12}
+nav{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:rgba(5,8,10,0.8);border-bottom:1px solid rgba(0,255,149,0.06);position:sticky;top:0;backdrop-filter:blur(6px);z-index:40}
 .brand{display:flex;align-items:center;gap:12px}
 .logo{width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,#002f1a,#00ff95);display:flex;align-items:center;justify-content:center;font-weight:700;color:#01110a}
-.title{font-weight:700;color:var(--neon)}
 .navlinks a{color:var(--muted);margin-left:16px;text-decoration:none;font-weight:600}
 .navlinks a:hover{color:var(--neon)}
-
-.hero{max-width:var(--maxwidth);margin:40px auto;padding:0 20px;display:grid;grid-template-columns:1fr 360px;gap:40px;}
-.hero-left h1{margin:0;color:var(--neon);font-size:2.3rem; line-height:1.2}
-.subtitle{color:var(--muted);margin-top:10px}
-
 .container{max-width:var(--maxwidth);margin:auto;padding:0 20px}
-section{margin:40px 0;padding:32px;background:rgba(15, 20, 24, 0.5);border-radius:12px;border:1px solid rgba(0,255,149,0.05);}
-section h2{color:var(--neon); border-bottom: 1px solid rgba(0,255,149,0.1); padding-bottom: 12px; margin-bottom: 24px;}
-
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;}
-.card{background:var(--card);padding:28px;border-radius:10px;border: 1px solid rgba(0,255,149,0.08);transition: all 0.3s ease;}
-.card:hover{border-color: var(--neon); transform: translateY(-4px);}
-.card h3{margin-top:0; color:var(--neon); font-size:1.4rem; border-bottom: 1px solid rgba(0,255,149,0.1); padding-bottom: 10px; margin-bottom: 15px;}
-
-/* SECCIÓN CERTIFICACIONES */
-.cert-grid {display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;}
-.cert-card {
-  background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(0,255,149,0.1);
-  padding: 18px; border-radius: 8px; transition: 0.3s;
-}
-.cert-card:hover {background: rgba(0,255,149,0.05); border-color: var(--neon);}
-.cert-issuer {color: var(--neon); font-size: 0.75rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;}
-.cert-name {color: #fff; font-size: 0.95rem; margin: 8px 0; font-weight: 600;}
-.cert-date {color: var(--muted); font-size: 0.8rem;}
-
-.btn-contact {
-  display: inline-flex; align-items: center; padding: 12px 24px; margin: 8px 8px 8px 0;
-  border: 1px solid var(--neon); color: var(--neon); text-decoration: none; border-radius: 6px;
-  font-weight: 600; transition: all 0.3s ease; background: rgba(0, 255, 149, 0.02);
-}
-.btn-contact:hover {background: var(--neon); color: #05110a; box-shadow: 0 0 20px rgba(0, 255, 149, 0.3); transform: translateY(-2px);}
-
-.irp-detail{background:rgba(0,0,0,0.2); padding:20px; border-radius:8px; border-left: 3px solid var(--neon)}
-table{width:100%; border-collapse: collapse; margin: 20px 0;}
-th, td{border: 1px solid rgba(0,255,149,0.1); padding: 12px; text-align: left;}
-th{color: var(--neon); background: rgba(0, 255, 149, 0.05);}
-
-@media(max-width:900px){.hero{grid-template-columns:1fr; text-align: center;} .navlinks{display:none}}
+section{margin:40px 0;padding:32px;background:rgba(15,20,24,0.5);border-radius:12px;border:1px solid rgba(0,255,149,0.05)}
+h1{color:var(--neon);font-size:2.5rem;margin:0}
+h2{color:var(--neon);border-bottom:1px solid rgba(0,255,149,0.1);padding-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.card{background:var(--card);padding:24px;border-radius:10px;border:1px solid rgba(0,255,149,0.08);transition:0.3s}
+.card:hover{border-color:var(--neon);transform:translateY(-4px)}
+.btn-contact{display:inline-flex;padding:12px 24px;margin:8px 8px 8px 0;border:1px solid var(--neon);color:var(--neon);text-decoration:none;border-radius:6px;font-weight:600;transition:0.3s;background:rgba(0,255,149,0.02)}
+.btn-contact:hover{background:var(--neon);color:#05110a;box-shadow:0 0 20px rgba(0,255,149,0.3)}
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px}
+.cert-card{background:rgba(255,255,255,0.03);padding:15px;border-radius:8px;border:1px solid rgba(0,255,149,0.1)}
+.cert-issuer{color:var(--neon);font-size:0.7rem;font-weight:bold;text-transform:uppercase}
 </style>
 </head>
 <body>
 <canvas id="matrix"></canvas>
-
 <nav>
-  <div class="brand">
-    <div class="logo">VM</div>
-    <div><div class="title">Portafolio Ciberseguridad</div><div style="font-size:12px;color:var(--muted)">Valentina Mendoza</div></div>
-  </div>
-  <div class="navlinks">
-    <a href="#proyectos">Proyectos</a>
-    <a href="#irp">Plan IRP</a>
-    <a href="#certificaciones">Certificaciones</a>
-    <a href="#contacto">Contacto</a>
-  </div>
+  <div class="brand"><div class="logo">VM</div><div><b style="color:var(--neon)">Valentina Mendoza</b></div></div>
+  <div class="navlinks"><a href="#proyectos">Proyectos</a><a href="#certificaciones">Certificaciones</a><a href="#contacto">Contacto</a></div>
 </nav>
 
 <div class="container">
-  <section class="hero" style="background:none; border:none; padding: 0;">
-    <div class="hero-left">
-      <h1>Analista TI & Ciberseguridad Operacional</h1>
-      <p class="subtitle" style="font-size: 1.1rem;">
-        Especialista en infraestructura con foco en Ciberseguridad.<br>
-        Gestión de incidentes bajo <b>NIST 800-61</b> y auditoría web automatizada.
-      </p>
-      <div style="margin-top:30px;"><a href="#proyectos" class="btn-contact" style="background:var(--neon); color:#05110a;">Explorar Proyectos</a></div>
+  <section style="background:none; border:none; text-align:center; padding-top:60px">
+    <h1>Valentina Mendoza</h1>
+    <p style="font-size:1.2rem; color:var(--muted)">Analista TI & Ciberseguridad Operacional Junior</p>
+    <div style="margin-top:20px">
+      <a href="#proyectos" class="btn-contact" style="background:var(--neon); color:#000">Ver Proyectos</a>
+      <a href="#contacto" class="btn-contact">Contactar</a>
     </div>
-    <aside style="background:rgba(0,255,149,0.03); border:1px solid rgba(0,255,149,0.1); border-radius:12px; padding:25px;">
-      <h4 style="color:var(--neon); margin-top:0; font-size: 1.1rem;">Expertise Junior</h4>
-      <p style="font-size:0.9rem; color:var(--muted)">• Incident Response (NIST)<br>• Red Team Fundamentals<br>• Infrastructure Security<br>• Disaster Recovery</p>
-    </aside>
   </section>
 
   <section id="proyectos">
     <h2>Proyectos Destacados</h2>
     <div class="grid">
-      <article class="card">
-        <h3>MitraScan — Proyecto de Título</h3>
-        <p>Automatización de escaneos de seguridad web con reportes técnicos detallados basados en herramientas open-source.</p>
-        <a href="https://valentina-cybersec.github.io/mitrascan-reports/" target="_blank" class="btn-contact" style="font-size: 0.8rem; padding: 8px 16px;">Ver Reportes en Vivo</a>
-      </article>
-      <article class="card">
-        <h3>Plan de Respuesta (IRP)</h3>
-        <p>Diseño operativo para la Municipalidad de Cerro Navia, enfocado en mitigación de Ransomware y Phishing bajo NIST.</p>
-        <a href="#irp" class="btn-contact" style="font-size: 0.8rem; padding: 8px 16px;">Ver Detalles</a>
-      </article>
+      <div class="card">
+        <h3>MitraScan</h3>
+        <p>Proyecto de título: Automatización de auditorías web con reportes técnicos profesionales.</p>
+        <a href="https://valentina-cybersec.github.io/mitrascan-reports/" target="_blank" class="btn-contact" style="font-size:0.8rem">Ver Reportes</a>
+      </div>
+      <div class="card">
+        <h3>Plan IRP Municipal</h3>
+        <p>Plan de Respuesta ante Incidentes (NIST 800-61) diseñado para la Municipalidad de Cerro Navia.</p>
+      </div>
     </div>
   </section>
 
   <section id="certificaciones">
-    <h2>Licencias y Certificaciones</h2>
+    <h2>Certificaciones</h2>
     <div class="cert-grid">
-      <div class="cert-card">
-        <div class="cert-issuer">Diplomados Ciberseguridad</div>
-        <div class="cert-name">Cumplimiento Digital Avanzado</div>
-        <div class="cert-date">Enero 2026</div>
-      </div>
-      <div class="cert-card">
-        <div class="cert-issuer">Cisco</div>
-        <div class="cert-name">Junior Cybersecurity Analyst Path</div>
-        <div class="cert-date">Agosto 2024</div>
-      </div>
-      <div class="cert-card">
-        <div class="cert-issuer">Usach</div>
-        <div class="cert-name">Bootcamp Seguridad Información</div>
-        <div class="cert-date">Septiembre 2024</div>
-      </div>
-      <div class="cert-card">
-        <div class="cert-issuer">Cyberland Academy</div>
-        <div class="cert-name">CEHPT Certified</div>
-        <div class="cert-date">Noviembre 2024</div>
-      </div>
-      <div class="cert-card">
-        <div class="cert-issuer">Cisco</div>
-        <div class="cert-name">Ethical Hacker</div>
-        <div class="cert-date">Octubre 2024</div>
-      </div>
-      <div class="cert-card">
-        <div class="cert-issuer">CertiProf</div>
-        <div class="cert-name">Cybersecurity Awareness CAPC</div>
-        <div class="cert-date">Diciembre 2024</div>
-      </div>
-    </div>
-    <p style="text-align:center; color:var(--muted); margin-top:20px; font-size: 0.9rem;">+12 Workshops adicionales en Pentesting, ISO 27017 y SGSI (Usach / Capacitación).</p>
-  </section>
-
-  <section id="irp">
-    <h2>📄 Detalles Plan IRP</h2>
-    <div class="irp-detail">
-        <p>Alineado a la <b>Ley N° 21.663</b>, este marco prioriza la continuidad de servicios críticos municipales.</p>
-        <table>
-            <tr><th>Amenaza</th><th>Impacto</th><th>Prioridad</th></tr>
-            <tr><td>Phishing</td><td>Alto</td><td style="color:#ff4d4d">Crítica</td></tr>
-            <tr><td>Ransomware</td><td>Alto</td><td style="color:orange">Alta</td></tr>
-        </table>
-        <p>Infraestructura respaldada bajo <b>Xen Orchestra</b> con esquema redundante 3-2-1.</p>
+      <div class="cert-card"><div class="cert-issuer">Diplomados Ciberseguridad</div><div>Cumplimiento Digital Avanzado (2026)</div></div>
+      <div class="cert-card"><div class="cert-issuer">Cisco</div><div>Junior Cybersecurity Analyst</div></div>
+      <div class="cert-card"><div class="cert-issuer">Usach</div><div>Bootcamp Seguridad Información</div></div>
+      <div class="cert-card"><div class="cert-issuer">CyberLand</div><div>Certified Ethical Hacker (CEHPT)</div></div>
     </div>
   </section>
 
   <section id="contacto">
-    <h2>Contacto & Redes</h2>
-    <div style="margin-top: 25px;">
-      <a href="mailto:valentina.mendoza.matamala@gmail.com" class="btn-contact">📧 Email</a>
-      <a href="https://www.linkedin.com/in/valentina-mendoza-9b1a4493/" target="_blank" class="btn-contact">🔗 LinkedIn</a>
-      <a href="https://github.com/valentina-cybersec" target="_blank" class="btn-contact">💻 GitHub</a>
-    </div>
+    <h2>Contacto</h2>
+    <a href="mailto:valentina.mendoza.matamala@gmail.com" class="btn-contact">📧 Email</a>
+    <a href="https://www.linkedin.com/in/valentina-mendoza-9b1a4493/" target="_blank" class="btn-contact">🔗 LinkedIn</a>
   </section>
 </div>
-
-<footer><p style="text-align:center;color:var(--muted);padding:40px">© 2026 Valentina Mendoza · Santiago, Chile</p></footer>
 
 <script>
 const canvas=document.getElementById('matrix'),ctx=canvas.getContext('2d');
@@ -179,13 +85,13 @@ function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeigh
 resize();window.addEventListener('resize',resize);
 const drops=new Array(Math.floor(window.innerWidth/14)).fill(1);
 function draw(){
-  ctx.fillStyle='rgba(6,9,13,0.18)';ctx.fillRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle='rgba(6,9,13,0.15)';ctx.fillRect(0,0,canvas.width,canvas.height);
   ctx.fillStyle='#00ff95';ctx.font='12px monospace';
-  for(let i=0;i<drops.length;i++){
-    ctx.fillText(Math.random()>0.5?'0':'1',i*14,drops[i]*14);
-    if(drops[i]*14>canvas.height&&Math.random()>0.975)drops[i]=0;
+  drops.forEach((y,i)=>{
+    ctx.fillText(Math.random()>0.5?'0':'1',i*14,y*14);
+    if(y*14>canvas.height&&Math.random()>0.975)drops[i]=0;
     drops[i]++;
-  }
+  });
 }
 setInterval(draw,60);
 </script>
