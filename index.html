@@ -9,75 +9,86 @@
 <style>
 :root{--bg:#06090d;--muted:#99bfb0;--neon:#00ff95;--card:#0b1114;--maxwidth:1100px}
 *{box-sizing:border-box}
-body{margin:0;font-family:Inter,sans-serif;background:var(--bg);color:#d8e9e2;line-height:1.6}
-#matrix{position:fixed;inset:0;z-index:-1;opacity:0.12}
-nav{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:rgba(5,8,10,0.8);border-bottom:1px solid rgba(0,255,149,0.06);position:sticky;top:0;backdrop-filter:blur(6px);z-index:40}
+body{margin:0;font-family:Inter,sans-serif;background:var(--bg);color:#d8e9e2;line-height:1.6;overflow-x:hidden}
+#matrix{position:fixed;inset:0;z-index:-1;opacity:0.15}
+nav{display:flex;justify-content:space-between;align-items:center;padding:15px 5%;background:rgba(5,8,10,0.8);border-bottom:1px solid rgba(0,255,149,0.1);position:sticky;top:0;backdrop-filter:blur(10px);z-index:100}
 .brand{display:flex;align-items:center;gap:12px}
-.logo{width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,#002f1a,#00ff95);display:flex;align-items:center;justify-content:center;font-weight:700;color:#01110a}
-.navlinks a{color:var(--muted);margin-left:16px;text-decoration:none;font-weight:600}
+.logo{width:35px;height:35px;border-radius:6px;background:linear-gradient(135deg,#002f1a,#00ff95);display:flex;align-items:center;justify-content:center;font-weight:700;color:#01110a}
+.navlinks a{color:var(--muted);margin-left:20px;text-decoration:none;font-size:0.9rem;font-weight:600}
 .navlinks a:hover{color:var(--neon)}
-.container{max-width:var(--maxwidth);margin:auto;padding:0 20px}
-section{margin:40px 0;padding:32px;background:rgba(15,20,24,0.5);border-radius:12px;border:1px solid rgba(0,255,149,0.05)}
-h1{color:var(--neon);font-size:2.5rem;margin:0}
-h2{color:var(--neon);border-bottom:1px solid rgba(0,255,149,0.1);padding-bottom:12px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
-.card{background:var(--card);padding:24px;border-radius:10px;border:1px solid rgba(0,255,149,0.08);transition:0.3s}
-.card:hover{border-color:var(--neon);transform:translateY(-4px)}
-.btn-contact{display:inline-flex;padding:12px 24px;margin:8px 8px 8px 0;border:1px solid var(--neon);color:var(--neon);text-decoration:none;border-radius:6px;font-weight:600;transition:0.3s;background:rgba(0,255,149,0.02)}
-.btn-contact:hover{background:var(--neon);color:#05110a;box-shadow:0 0 20px rgba(0,255,149,0.3)}
-.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px}
-.cert-card{background:rgba(255,255,255,0.03);padding:15px;border-radius:8px;border:1px solid rgba(0,255,149,0.1)}
-.cert-issuer{color:var(--neon);font-size:0.7rem;font-weight:bold;text-transform:uppercase}
+.container{max-width:var(--maxwidth);margin:0 auto;padding:0 20px}
+section{margin:50px 0;padding:40px;background:rgba(15,20,24,0.6);border-radius:15px;border:1px solid rgba(0,255,149,0.05)}
+h1{color:var(--neon);font-size:clamp(2rem, 5vw, 3rem);margin:0}
+h2{color:var(--neon);border-bottom:1px solid rgba(0,255,149,0.1);padding-bottom:15px;margin-bottom:30px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px}
+.card{background:var(--card);padding:30px;border-radius:12px;border:1px solid rgba(0,255,149,0.1);transition:0.3s}
+.card:hover{border-color:var(--neon);transform:translateY(-5px);box-shadow:0 10px 30px rgba(0,255,149,0.05)}
+.btn-contact{display:inline-flex;padding:12px 25px;margin:10px 10px 10px 0;border:1px solid var(--neon);color:var(--neon);text-decoration:none;border-radius:6px;font-weight:600;transition:0.3s;background:rgba(0,255,149,0.02)}
+.btn-contact:hover{background:var(--neon);color:#05110a;box-shadow:0 0 20px rgba(0,255,149,0.4)}
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:15px}
+.cert-card{background:rgba(255,255,255,0.03);padding:20px;border-radius:10px;border:1px solid rgba(0,255,149,0.05);transition:0.3s}
+.cert-card:hover{border-color:var(--neon);background:rgba(0,255,149,0.02)}
+.cert-issuer{color:var(--neon);font-size:0.75rem;font-weight:700;text-transform:uppercase;display:block;margin-bottom:5px}
+@media(max-width:768px){.navlinks{display:none} section{padding:25px}}
 </style>
 </head>
 <body>
 <canvas id="matrix"></canvas>
 <nav>
-  <div class="brand"><div class="logo">VM</div><div><b style="color:var(--neon)">Valentina Mendoza</b></div></div>
+  <div class="brand"><div class="logo">VM</div><div style="font-weight:700;color:var(--neon)">Valentina Mendoza</div></div>
   <div class="navlinks"><a href="#proyectos">Proyectos</a><a href="#certificaciones">Certificaciones</a><a href="#contacto">Contacto</a></div>
 </nav>
 
 <div class="container">
-  <section style="background:none; border:none; text-align:center; padding-top:60px">
+  <header style="text-align:center; padding:100px 0 60px">
     <h1>Valentina Mendoza</h1>
-    <p style="font-size:1.2rem; color:var(--muted)">Analista TI & Ciberseguridad Operacional Junior</p>
-    <div style="margin-top:20px">
-      <a href="#proyectos" class="btn-contact" style="background:var(--neon); color:#000">Ver Proyectos</a>
+    <p style="font-size:1.3rem; color:var(--muted); max-width:700px; margin:20px auto">Analista TI & Ciberseguridad Operacional Junior con foco en gestión de incidentes y auditoría web.</p>
+    <div style="margin-top:30px">
+      <a href="#proyectos" class="btn-contact" style="background:var(--neon); color:#000">Explorar Proyectos</a>
       <a href="#contacto" class="btn-contact">Contactar</a>
     </div>
-  </section>
+  </header>
 
   <section id="proyectos">
     <h2>Proyectos Destacados</h2>
     <div class="grid">
       <div class="card">
         <h3>MitraScan</h3>
-        <p>Proyecto de título: Automatización de auditorías web con reportes técnicos profesionales.</p>
-        <a href="https://valentina-cybersec.github.io/mitrascan-reports/" target="_blank" class="btn-contact" style="font-size:0.8rem">Ver Reportes</a>
+        <p>Proyecto de título centrado en la automatización de auditorías web. Generación de reportes técnicos con herramientas como Nmap y Nuclei.</p>
+        <a href="https://valentina-cybersec.github.io/mitrascan-reports/" target="_blank" class="btn-contact" style="font-size:0.85rem">Ver Reportes</a>
       </div>
       <div class="card">
         <h3>Plan IRP Municipal</h3>
-        <p>Plan de Respuesta ante Incidentes (NIST 800-61) diseñado para la Municipalidad de Cerro Navia.</p>
+        <p>Diseño de Plan de Respuesta ante Incidentes para la Municipalidad de Cerro Navia, basado en el marco NIST SP 800-61.</p>
+        <p style="font-size:0.85rem; color:var(--muted)">Enfoque en Ransomware y Phishing.</p>
       </div>
     </div>
   </section>
 
   <section id="certificaciones">
-    <h2>Certificaciones</h2>
+    <h2>Certificaciones Destacadas</h2>
     <div class="cert-grid">
-      <div class="cert-card"><div class="cert-issuer">Diplomados Ciberseguridad</div><div>Cumplimiento Digital Avanzado (2026)</div></div>
-      <div class="cert-card"><div class="cert-issuer">Cisco</div><div>Junior Cybersecurity Analyst</div></div>
-      <div class="cert-card"><div class="cert-issuer">Usach</div><div>Bootcamp Seguridad Información</div></div>
-      <div class="cert-card"><div class="cert-issuer">CyberLand</div><div>Certified Ethical Hacker (CEHPT)</div></div>
+      <div class="cert-card"><span class="cert-issuer">Diplomados Ciberseguridad</span><div style="font-weight:600">Cumplimiento Digital Avanzado (2026)</div></div>
+      <div class="cert-card"><span class="cert-issuer">Cisco</span><div style="font-weight:600">Junior Cybersecurity Analyst</div></div>
+      <div class="cert-card"><span class="cert-issuer">Usach</span><div style="font-weight:600">Bootcamp Seguridad de la Información</div></div>
+      <div class="cert-card"><span class="cert-issuer">CyberLand</span><div style="font-weight:600">Certified Ethical Hacker (CEHPT)</div></div>
+      <div class="cert-card"><span class="cert-issuer">CertiProf</span><div style="font-weight:600">Cybersecurity Awareness CAPC</div></div>
+      <div class="cert-card"><span class="cert-issuer">Cisco</span><div style="font-weight:600">Ethical Hacker</div></div>
     </div>
   </section>
 
   <section id="contacto">
-    <h2>Contacto</h2>
+    <h2>Contacto & Redes</h2>
+    <p style="margin-bottom:25px">¿Buscas fortalecer tu equipo de seguridad? Conectemos.</p>
     <a href="mailto:valentina.mendoza.matamala@gmail.com" class="btn-contact">📧 Email</a>
     <a href="https://www.linkedin.com/in/valentina-mendoza-9b1a4493/" target="_blank" class="btn-contact">🔗 LinkedIn</a>
+    <a href="https://github.com/valentina-cybersec" target="_blank" class="btn-contact">💻 GitHub</a>
   </section>
 </div>
+
+<footer style="text-align:center; padding:50px; color:var(--muted); font-size:0.9rem">
+  © 2026 Valentina Mendoza · Santiago, Chile
+</footer>
 
 <script>
 const canvas=document.getElementById('matrix'),ctx=canvas.getContext('2d');
