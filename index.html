@@ -1,597 +1,113 @@
 <!DOCTYPE html>
-
 <html lang="es">
-
 <head>
-
 <meta charset="utf-8" />
-
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-
-
-
-<title>Valentina Mendoza | Analista TI & Ciberseguridad Operacional Junior</title>
-
-<meta name="description" content="Portafolio profesional de Valentina Mendoza. Analista TI con base en telecomunicaciones, redes e infraestructura, en transición a ciberseguridad operacional junior." />
-
-
-
-<link rel="icon" href="favicon.ico" />
-
+<title>Valentina Mendoza | Analista TI & Ciberseguridad</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-
-
 <style>
-
-:root{
-
-  --bg:#06090d;
-
-  --panel:#0f1418;
-
-  --muted:#99bfb0;
-
-  --neon:#00ff95;
-
-  --card:#0b1114;
-
-  --glass: rgba(10,15,20,0.6);
-
-  --accent-shadow: 0 6px 18px rgba(0,255,149,0.06);
-
-  --maxwidth:1100px;
-
-}
-
+:root{--bg:#06090d;--panel:#0f1418;--muted:#99bfb0;--neon:#00ff95;--card:#0b1114;--maxwidth:1100px}
 *{box-sizing:border-box}
-
-html,body{height:100%}
-
-body{
-
-  margin:0;
-
-  font-family:Inter,system-ui,Segoe UI,Roboto,Arial;
-
-  background:var(--bg);
-
-  color:#d8e9e2;
-
-  line-height:1.45;
-
-}
-
-#matrix{
-
-  position:fixed;
-
-  inset:0;
-
-  z-index:-1;
-
-  opacity:0.12;
-
-  filter: blur(1px) contrast(1.1);
-
-}
-
-nav{
-
-  display:flex;
-
-  justify-content:space-between;
-
-  align-items:center;
-
-  padding:14px 20px;
-
-  background:linear-gradient(180deg, rgba(5,8,10,0.55), rgba(5,8,10,0.25));
-
-  border-bottom:1px solid rgba(0,255,149,0.06);
-
-  position:sticky;
-
-  top:0;
-
-  backdrop-filter: blur(6px);
-
-  z-index:40;
-
-}
-
+body{margin:0;font-family:Inter,sans-serif;background:var(--bg);color:#d8e9e2;line-height:1.45}
+#matrix{position:fixed;inset:0;z-index:-1;opacity:0.12}
+nav{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:rgba(5,8,10,0.8);border-bottom:1px solid rgba(0,255,149,0.1);position:sticky;top:0;backdrop-filter:blur(6px);z-index:40}
 .brand{display:flex;align-items:center;gap:12px}
-
-.logo{
-
-  width:40px;height:40px;border-radius:8px;
-
-  background:linear-gradient(135deg,#002f1a,#00ff95);
-
-  display:flex;align-items:center;justify-content:center;
-
-  font-weight:700;color:#01110a
-
-}
-
+.logo{width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,#002f1a,#00ff95);display:flex;align-items:center;justify-content:center;font-weight:700;color:#01110a}
 .title{font-weight:700;color:var(--neon)}
-
 .navlinks a{color:var(--muted);margin-left:16px;text-decoration:none;font-weight:600}
-
-.navlinks a:hover{color:var(--neon)}
-
-
-
-.hero{
-
-  max-width:var(--maxwidth);
-
-  margin:28px auto;
-
-  padding:28px 20px;
-
-  display:grid;
-
-  grid-template-columns:1fr 360px;
-
-  gap:28px;
-
-}
-
+.hero{max-width:var(--maxwidth);margin:28px auto;padding:28px 20px;display:grid;grid-template-columns:1fr 360px;gap:28px}
 .hero-left h1{margin:0;color:var(--neon);font-size:2.1rem}
-
 .subtitle{color:var(--muted);margin-top:10px}
-
-.cta-row{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
-
-.btn{
-
-  background:var(--neon);
-
-  color:#05110a;
-
-  padding:10px 14px;border-radius:8px;
-
-  font-weight:700;text-decoration:none;
-
-}
-
-.ghost{
-
-  border:1px solid rgba(255,255,255,0.04);
-
-  color:var(--muted);
-
-  padding:9px 12px;border-radius:8px;text-decoration:none
-
-}
-
-.hero-right{
-
-  border:1px solid rgba(0,255,149,0.04);
-
-  border-radius:12px;
-
-  padding:16px;
-
-}
-
-.mini-card{margin-bottom:10px}
-
-.mini-card h4{margin:6px 0;color:var(--neon)}
-
-
-
 .container{max-width:var(--maxwidth);margin:auto;padding:0 20px}
-
-section{
-
-  margin:18px 0;
-
-  padding:18px;
-
-  background:rgba(10,14,16,0.3);
-
-  border-radius:12px;
-
-  border:1px solid rgba(0,255,149,0.03)
-
-}
-
-section h2{color:var(--neon)}
-
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-
-.card{
-
-  background:var(--card);
-
-  padding:16px;
-
-  border-radius:10px;
-
-  display: flex;
-
-  flex-direction: column;
-
-  justify-content: space-between;
-
-}
-
-.card h3{color:var(--neon); margin-top: 0;}
-
-.tag{
-
-  background:rgba(0,0,0,0.3);
-
-  padding:6px 10px;
-
-  border-radius:999px;
-
-  font-size:0.8rem;
-
-  color:var(--muted);
-
-  margin-right:6px;
-
-  text-decoration: none;
-
-}
-
+section{margin:24px 0;padding:24px;background:rgba(15,20,24,0.6);border-radius:12px;border:1px solid rgba(0,255,149,0.05)}
+h2{color:var(--neon);border-bottom:1px solid rgba(0,255,149,0.1);padding-bottom:10px}
+.irp-content{background:var(--card);padding:20px;border-radius:8px;white-space:pre-wrap;font-size:0.95rem;color:#b0c4bb;border-left:4px solid var(--neon)}
 .skills{display:flex;flex-wrap:wrap;gap:10px}
-
-.skill{
-
-  background:rgba(0,255,149,0.06);
-
-  color:var(--neon);
-
-  padding:8px 10px;
-
-  border-radius:8px;
-
-  font-weight:700
-
-}
-
-footer{text-align:center;color:var(--muted);padding:24px}
-
-
-
-@media(max-width:900px){
-
-  .hero{grid-template-columns:1fr}
-
-  .navlinks{display:none}
-
-}
-
+.skill{background:rgba(0,255,149,0.06);color:var(--neon);padding:8px 10px;border-radius:8px;font-weight:700}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.navlinks{display:none}}
 </style>
-
 </head>
-
-
-
 <body>
-
-
-
 <canvas id="matrix"></canvas>
-
-
-
 <nav>
-
-  <div class="brand">
-
-    <div class="logo">VM</div>
-
-    <div>
-
-      <div class="title">Portafolio Profesional</div>
-
-      <div style="font-size:12px;color:var(--muted)">Valentina Mendoza</div>
-
-    </div>
-
-  </div>
-
-  <div class="navlinks">
-
-    <a href="#proyectos">Proyectos</a>
-
-    <a href="#skills">Habilidades</a>
-
-    <a href="#contacto">Contacto</a>
-
-  </div>
-
+  <div class="brand"><div class="logo">VM</div><div><div class="title">Portafolio Profesional</div><div style="font-size:12px;color:var(--muted)">Valentina Mendoza</div></div></div>
+  <div class="navlinks"><a href="#proyectos">Proyectos</a><a href="#irp">Plan IRP</a><a href="#contacto">Contacto</a></div>
 </nav>
 
-
-
-<section class="hero">
-
-  <div class="hero-left">
-
-    <h1>Valentina Mendoza — Analista TI & Ciberseguridad Operacional Junior</h1>
-
-    <p class="subtitle">
-
-      Profesional TI con base en telecomunicaciones, redes e infraestructura, con experiencia en soporte TI,
-
-      administración de sistemas y continuidad operacional.<br><br>
-
-      Actualmente en transición a ciberseguridad operacional junior, con foco en auditoría web básica,
-
-      análisis de vulnerabilidades y gestión de incidentes.
-
-    </p>
-
-    <div class="cta-row">
-
-      <a class="btn" href="#proyectos">Ver proyectos</a>
-
-      <a class="ghost" href="https://valentina-cybersec.github.io/mitrascan-reports/" target="_blank">
-
-        Ver MitraScan (reportes)
-
-      </a>
-
-      <a class="ghost" href="Plan_Respuesta_Valentina.pdf" target="_blank" style="border-color: var(--neon); color: var(--neon);">
-
-        📄 Ver Plan de Respuesta (IRP)
-
-      </a>
-
+<div class="container">
+  <section class="hero" style="border:none;background:none;padding:0">
+    <div class="hero-left">
+      <h1>Valentina Mendoza — Analista TI & Ciberseguridad</h1>
+      <p class="subtitle">Especialista en infraestructura y redes en transición a Ciberseguridad Operacional. Enfocada en gestión de incidentes y auditoría web.</p>
     </div>
+  </section>
 
+  <section id="irp">
+  <h2>📄 Plan de Respuesta y Mitigación (Detalle Técnico)</h2>
+  <p class="subtitle">Marco operativo desarrollado para la Municipalidad de Cerro Navia basado en NIST SP 800-61.</p>
+  
+  <div class="irp-content" style="white-space: normal;">
+    
+    <h3>1. Introducción y Contexto</h3>
+    <p>Este plan aborda la creación y ejecución de estrategias frente a incidentes de seguridad informática para la <strong>Municipalidad de Cerro Navia</strong>, fundamentándose en la evaluación de su infraestructura tecnológica y estándares internacionales.</p>
+
+    <h3>2. Análisis de Riesgos y Vulnerabilidades</h3>
+    <p>Se identificaron brechas críticas que podrían comprometer la continuidad operativa y la privacidad de los datos (Ley 19.628):</p>
+    <ul>
+      <li><strong>Vulnerabilidades:</strong> Sistemas sin actualizar, falta de segmentación de red, dependencia de proveedores externos (Mundo, CAS Chile) y carencia de cultura de ciberseguridad en funcionarios.</li>
+      <li><strong>Riesgos Críticos:</strong> Phishing a funcionarios (Probabilidad/Impacto: Alto) y Malware/Ransomware.</li>
+    </ul>
+
+    <h3>3. Plan de Respuesta ante Incidentes (NIST 800-61)</h3>
+    <p>El protocolo se divide en 6 fases estratégicas para asegurar una gestión eficiente:</p>
+    <ol>
+      <li><strong>Preparación:</strong> Entrenamiento, herramientas de vigilancia y estrategia de respaldo.</li>
+      <li><strong>Identificación:</strong> Supervisión de registros (logs) y evaluación de IoC (Indicadores de Compromiso).</li>
+      <li><strong>Contención:</strong> Aislamiento de dispositivos y cierre de cuentas en riesgo.</li>
+      <li><strong>Erradicación:</strong> Eliminación de software malicioso y actualización de sistemas.</li>
+      <li><strong>Recuperación:</strong> Restauración mediante Xen Orchestra siguiendo la regla 3-2-1.</li>
+      <li><strong>Lecciones Aprendidas:</strong> Informe post-incidente y fortalecimiento de controles.</li>
+    </ol>
+
+    <h3>4. Infraestructura de Respaldo</h3>
+    <p>La continuidad se garantiza mediante un entorno <strong>XCP-ng</strong> gestionado por <strong>Xen Orchestra</strong>, con servidores redundantes para servicios críticos como DNS, Active Directory y Bases de Datos.</p>
+
+    <div style="background: rgba(0, 255, 149, 0.1); padding: 15px; border-radius: 8px; margin-top: 20px;">
+      <p><strong>Nota Académica:</strong> Este documento fue elaborado para la validación de la práctica profesional de Técnico en Ciberseguridad, cumpliendo con la Ley Marco de Ciberseguridad (Ley N° 21.663).</p>
+    </div>
   </div>
+</section>
 
-
-
-  <aside class="hero-right">
-
-    <div class="mini-card">
-
-      <h4>Incident Response</h4>
-
-      <p class="subtitle">
-
-        Diseño de marcos operativos bajo NIST SP 800-61 para la mitigación de crisis cibernéticas.
-
-      </p>
-
+  <section id="skills">
+    <h2>Habilidades Técnicas</h2>
+    <div class="skills">
+      <div class="skill">NIST 800-61</div><div class="skill">Python</div><div class="skill">Nmap</div><div class="skill">Gestión de Incidentes</div>
     </div>
-
-    <div class="mini-card">
-
-      <h4>MitraScan</h4>
-
-      <p class="subtitle">
-
-        Auditoría web automatizada con Nmap, Nikto y Nuclei.
-
-        Validado en entornos de prueba controlados.
-
-      </p>
-
-    </div>
-
-    <div class="mini-card">
-
-      <h4>Stack Técnico</h4>
-
-      <p class="subtitle">Kali Linux · Python · Bash · NIST Framework · GRC · SIEM/SOC Intro</p>
-
-    </div>
-
-  </aside>
-
-</section>
-
-
-
-<main class="container">
-
-
-
-<section id="proyectos">
-
-  <h2>Proyectos Destacados</h2>
-
-  <p class="subtitle">Marcos de trabajo y herramientas desarrolladas para la seguridad operativa.</p>
-
-
-
-  <div class="grid">
-
-    <article class="card">
-
-      <div>
-
-        <h3>MitraScan — Auditoría Web Automatizada</h3>
-
-        <p>
-
-          Prototipo que automatiza escaneos web y genera reportes técnicos en HTML,
-
-          integrando Nmap, Nikto y Nuclei con parser en Python.
-
-          Alineado a buenas prácticas de NIST, OWASP y MITRE.
-
-        </p>
-
-      </div>
-
-      <div style="margin-top: 15px;">
-
-        <a class="tag" href="https://valentina-cybersec.github.io/mitrascan-reports/" target="_blank">Ver reportes</a>
-
-        <span class="tag">Python</span>
-
-        <span class="tag">Bash</span>
-
-      </div>
-
-    </article>
-
-
-
-    <article class="card">
-
-      <div>
-
-        <h3>Incident Response & Mitigation Plan (IRP)</h3>
-
-        <p>
-
-          Marco estratégico para la gestión de incidentes basado en <b>NIST SP 800-61</b>. 
-
-          Incluye matrices de criticidad, protocolos de comunicación corporativa y planes de acción ante Ransomware y Phishing.
-
-        </p>
-
-      </div>
-
-      <div style="margin-top: 15px;">
-
-        <a class="tag" href="Plan_Respuesta_Valentina.pdf" target="_blank">Abrir PDF</a>
-
-        <span class="tag">NIST 800-61</span>
-
-        <span class="tag">GRC</span>
-
-        <span class="tag">Cyber-Resilience</span>
-
-      </div>
-
-    </article>
-
-  </div>
-
-</section>
-
-
-
-<section id="skills">
-
-  <h2>Habilidades & Herramientas</h2>
-
-  <div class="skills">
-
-    <div class="skill">Nmap</div>
-
-    <div class="skill">Nikto</div>
-
-    <div class="skill">Nuclei</div>
-
-    <div class="skill">Python</div>
-
-    <div class="skill">Bash</div>
-
-    <div class="skill">Kali Linux</div>
-
-    <div class="skill">OWASP Top 10</div>
-
-    <div class="skill">MITRE ATT&CK</div>
-
-    <div class="skill">NIST SP 800-61 (IR)</div>
-
-    <div class="skill">Gestión de Crisis</div>
-
-    <div class="skill">Continuidad Operacional</div>
-
-  </div>
-
-</section>
-
-
-
-<section id="contacto">
-
-  <h2>Contacto</h2>
-
-  <p class="subtitle">
-
-    ¿Te interesa revisar un proyecto o conversar sobre oportunidades TI y ciberseguridad?
-
-  </p>
-
-  <ul style="list-style:none;padding:0;color:var(--muted)">
-
-    <li>Email: <a href="mailto:valentina.mendoza.matamala@gmail.com" style="color:var(--neon)">valentina.mendoza.matamala@gmail.com</a></li>
-
-    <li>LinkedIn: <a href="https://www.linkedin.com/in/valentina-mendoza-9b1a4493/" target="_blank" style="color:var(--neon)">linkedin.com/in/valentina-mendoza</a></li>
-
-    <li>GitHub: <a href="https://github.com/valentina-cybersec" target="_blank" style="color:var(--neon)">github.com/valentina-cybersec</a></li>
-
-    <li>WhatsApp: +56 9 6867 2169</li>
-
-  </ul>
-
-</section>
-
-
-
-</main>
-
-
-
-<footer>
-
-© 2026 Valentina Mendoza — Portafolio Profesional · Hecho en Chile
-
-</footer>
-
-
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>Email: <span style="color:var(--neon)">valentina.mendoza.matamala@gmail.com</span></p>
+  </section>
+</div>
+
+<footer><p style="text-align:center;color:var(--muted);padding:20px">© 2026 Valentina Mendoza</p></footer>
 
 <script>
-
-const canvas=document.getElementById('matrix');
-
-const ctx=canvas.getContext('2d');
-
+const canvas=document.getElementById('matrix'),ctx=canvas.getContext('2d');
 function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight}
-
 resize();window.addEventListener('resize',resize);
-
-const cols=Math.floor(window.innerWidth/14);
-
-const drops=new Array(cols).fill(1);
-
-const letters='01';
-
+const drops=new Array(Math.floor(window.innerWidth/14)).fill(1);
 function draw(){
-
-  ctx.fillStyle='rgba(6,9,13,0.18)';
-
-  ctx.fillRect(0,0,canvas.width,canvas.height);
-
-  ctx.fillStyle='#00ff95';
-
-  ctx.font='12px monospace';
-
-  for(let i=0;i<drops.length;i++){
-
-    const t=letters[Math.floor(Math.random()*letters.length)];
-
-    ctx.fillText(t,i*14,drops[i]*14);
-
-    if(drops[i]*14>canvas.height&&Math.random()>0.975)drops[i]=0;
-
+  ctx.fillStyle='rgba(6,9,13,0.15)';ctx.fillRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle='#00ff95';ctx.font='12px monospace';
+  drops.forEach((y,i)=>{
+    ctx.fillText(Math.random()>0.5?'0':'1',i*14,y*14);
+    if(y*14>canvas.height&&Math.random()>0.975)drops[i]=0;
     drops[i]++;
-
-  }
-
+  });
 }
-
 setInterval(draw,60);
-
 </script>
-
-
-
 </body>
-
 </html>
