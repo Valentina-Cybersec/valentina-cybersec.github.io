@@ -3,129 +3,109 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Valentina Mendoza | Analista TI & Techsola_cl</title>
-<link rel="icon" href="favicon.png" type="image/png">
+<title>Valentina Mendoza | Portafolio de Soluciones TI & Forense</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg:#06090d; --muted:#99bfb0; --neon:#00ff95; --card:#0b1114;
-  --primary:#38bdf8; --secondary:#8b5cf6; --maxwidth:1200px;
+  --primary:#38bdf8; --maxwidth:1100px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Inter,sans-serif;background:var(--bg);color:#d8e9e2;line-height:1.6;overflow-x:hidden}
-#matrix{position:fixed;inset:0;z-index:-1;opacity:0.12}
+#matrix{position:fixed;inset:0;z-index:-1;opacity:0.1}
 nav{display:flex;justify-content:space-between;align-items:center;padding:15px 5%;background:rgba(5,8,10,0.9);border-bottom:1px solid rgba(0,255,149,0.1);position:sticky;top:0;backdrop-filter:blur(10px);z-index:100}
-.brand{display:flex;align-items:center;gap:12px}
-.logo{width:45px;height:45px;border-radius:6px;background:linear-gradient(135deg,#002f1a,#00ff95);display:flex;align-items:center;justify-content:center;font-weight:700;color:#01110a}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;color:var(--neon)}
+.logo{width:40px;height:40px;border-radius:6px;background:var(--neon);display:flex;align-items:center;justify-content:center;color:#01110a}
 .navlinks a{color:var(--muted);margin-left:20px;text-decoration:none;font-size:0.9rem;font-weight:600}
-.navlinks a:hover{color:var(--neon)}
 .container{max-width:var(--maxwidth);margin:0 auto;padding:0 20px}
-section{margin:60px 0;padding:50px;background:rgba(15,20,24,0.7);border-radius:15px;border:1px solid rgba(0,255,149,0.05)}
+section{margin:40px 0;padding:40px;background:rgba(15,20,24,0.7);border-radius:15px;border:1px solid rgba(0,255,149,0.05)}
 h1{color:var(--neon);font-size:clamp(2rem,5vw,3rem);margin-bottom:10px}
-h2{color:var(--neon);border-bottom:1px solid rgba(0,255,149,0.1);padding-bottom:15px;margin-bottom:30px}
-h3{color:var(--primary)}
-p{color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
+h2{color:var(--neon);margin-bottom:30px;font-size:1.4rem;text-transform:uppercase;letter-spacing:1px}
+h3{color:var(--primary);margin-bottom:10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
 .card{background:var(--card);padding:25px;border-radius:12px;border:1px solid rgba(0,255,149,0.05);transition:0.3s}
-.card:hover{border-color:var(--neon);transform:translateY(-5px);box-shadow:0 10px 30px rgba(0,255,149,0.05)}
-.btn-contact{display:inline-flex;padding:12px 25px;margin:10px 10px 10px 0;border:1px solid var(--neon);color:var(--neon);text-decoration:none;border-radius:6px;font-weight:600;transition:0.3s;background:rgba(0,255,149,0.02)}
-.btn-contact:hover{background:var(--neon);color:#05110a;box-shadow:0 0 20px rgba(0,255,149,0.4)}
-.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:15px}
-.cert-card{background:rgba(255,255,255,0.03);padding:20px;border-radius:10px;border:1px solid rgba(0,255,149,0.05);transition:0.3s}
-.cert-card:hover{border-color:var(--neon);background:rgba(0,255,149,0.02)}
-.cert-issuer{color:var(--neon);font-size:0.75rem;font-weight:700;text-transform:uppercase;display:block;margin-bottom:5px}
-footer{background:rgba(5,8,10,0.85);text-align:center;padding:50px; color:var(--muted); font-size:0.9rem}
-@media(max-width:768px){.navlinks{display:none} section{padding:30px}}
+.card:hover{border-color:var(--neon);transform:translateY(-3px)}
+.tag{background:rgba(56,189,248,0.1);color:var(--primary);padding:3px 8px;border-radius:4px;font-size:0.7rem;font-weight:700;margin-bottom:10px;display:inline-block}
+.btn{display:inline-flex;padding:10px 20px;margin-top:15px;border:1px solid var(--neon);color:var(--neon);text-decoration:none;border-radius:6px;font-weight:600;transition:0.3s;font-size:0.9rem}
+.btn-main{background:var(--neon);color:#000}
+.btn:hover{box-shadow:0 0 15px rgba(0,255,149,0.3)}
+footer{text-align:center;padding:40px;color:var(--muted);font-size:0.8rem}
+@media(max-width:768px){section{padding:25px}}
 </style>
 </head>
 <body>
 <canvas id="matrix"></canvas>
 
 <nav>
-  <div class="brand"><div class="logo">VM</div><div style="font-weight:700;color:var(--neon)">Valentina Mendoza</div></div>
+  <div class="brand"><div class="logo">VM</div> Valentina Mendoza</div>
   <div class="navlinks">
-    <a href="#inicio">Inicio</a>
-    <a href="#proyectos">Proyectos</a>
     <a href="#servicios">Servicios</a>
-    <a href="#certificaciones">Certificaciones</a>
+    <a href="#hitos">Hitos</a>
     <a href="#contacto">Contacto</a>
   </div>
 </nav>
 
 <div class="container">
-  <!-- Inicio -->
-  <section id="inicio" style="text-align:center; padding:120px 0 60px">
-    <h1>Valentina Mendoza</h1>
-    <p style="font-size:1.3rem; color:var(--muted); max-width:700px; margin:20px auto">
-      Analista TI & Ciberseguridad | Perito Informático Forense | Fundadora Techsola_cl
+  <section id="inicio" style="text-align:center;background:none;border:none;padding:80px 0">
+    <h1>Soluciones TI & Peritaje Forense</h1>
+    <p style="font-size:1.2rem;color:var(--muted);max-width:700px;margin:15px auto">
+      Especialista en Infraestructura y Ciberseguridad[cite: 21, 24]. Transformo incidentes técnicos en evidencia verificable para procesos legales[cite: 25, 52].
     </p>
-    <div style="margin-top:30px">
-      <a href="#proyectos" class="btn-contact" style="background:var(--neon); color:#000">Explorar Proyectos</a>
-      <a href="#contacto" class="btn-contact">Contactar</a>
-    </div>
+    <a href="https://wa.me/56968672169" class="btn btn-main">Consultar Servicio</a>
   </section>
 
-  <!-- Proyectos -->
-  <section id="proyectos">
-    <h2>Proyectos Destacados</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>MitraScan</h3>
-        <p>Automatización de auditorías web y reportes técnicos con Nmap y Nuclei. Proyecto personal y de Techsola.</p>
-        <a href="https://valentina-cybersec.github.io/mitrascan-reports/" target="_blank" class="btn-contact" style="font-size:0.85rem">Ver Reportes</a>
-      </div>
-      <div class="card">
-        <h3>Plan IRP Municipal</h3>
-        <p>Diseño de Plan de Respuesta ante Incidentes para la Municipalidad de Cerro Navia, siguiendo marco NIST SP 800-61.</p>
-      </div>
-      <div class="card">
-        <h3>Informe Técnico de Red</h3>
-        <p>Diagnóstico profesional de redes, dispositivos y vulnerabilidades para clientes, con evidencia verificable para uso legal o interno.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Servicios -->
   <section id="servicios">
-    <h2>Servicios Techsola_cl</h2>
+    <h2>¿En qué puedo ayudarte?</h2>
     <div class="grid">
-      <div class="card"><h3>🖥️ Reparación de PCs y Notebooks</h3><p>Solución rápida de fallas de hardware y software, con diagnóstico honesto y seguro.</p></div>
-      <div class="card"><h3>⚙️ Optimización y Limpieza</h3><p>Mejoramos rendimiento, estabilidad y vida útil de tus equipos.</p></div>
-      <div class="card"><h3>🚀 Actualización de Equipos</h3><p>Instalación de SSD, RAM y mejoras de hardware.</p></div>
-      <div class="card"><h3>💾 Respaldo de Información</h3><p>Protección de datos críticos ante fallas o pérdidas.</p></div>
-      <div class="card"><h3>🛡️ Ciberseguridad</h3><p>Protección contra virus, malware, auditorías web y redes seguras.</p></div>
-      <div class="card"><h3>🎓 Asesoría y Buenas Prácticas</h3><p>Capacitación en seguridad digital para individuos y empresas.</p></div>
+      <div class="card">
+        <span class="tag">FORENSE DIGITAL</span>
+        <h3>Certificación de Evidencia</h3>
+        <p>Validación de chats, correos y archivos para juicios con integridad garantizada (SHA-256)[cite: 26, 53].</p>
+      </div>
+      <div class="card">
+        <span class="tag">INFRAESTRUCTURA</span>
+        <h3>Soporte & Optimización</h3>
+        <p>Reparación avanzada, actualización de hardware y administración de servidores críticos[cite: 58, 60].</p>
+      </div>
+      <div class="card">
+        <span class="tag">CIBERSEGURIDAD</span>
+        <h3>Auditoría de Redes</h3>
+        <p>Identificación de vulnerabilidades y accesos no autorizados en sistemas corporativos[cite: 25, 50].</p>
+      </div>
     </div>
   </section>
 
-  <!-- Certificaciones -->
-  <section id="certificaciones">
-    <h2>Certificaciones y Capacitación</h2>
-    <div class="cert-grid">
-      <div class="cert-card"><span class="cert-issuer">Diplomados</span><div style="font-weight:600">Cumplimiento Digital Avanzado (2026)</div></div>
-      <div class="cert-card"><span class="cert-issuer">Cisco</span><div style="font-weight:600">Junior Cybersecurity Analyst</div></div>
-      <div class="cert-card"><span class="cert-issuer">Usach</span><div style="font-weight:600">Bootcamp Seguridad de la Información</div></div>
-      <div class="cert-card"><span class="cert-issuer">CyberLand</span><div style="font-weight:600">Certified Ethical Hacker (CEHPT)</div></div>
-      <div class="cert-card"><span class="cert-issuer">CertiProf</span><div style="font-weight:600">Cybersecurity Awareness CAPC</div></div>
-      <div class="cert-card"><span class="cert-issuer">Cisco</span><div style="font-weight:600">Ethical Hacker</div></div>
+  <section id="hitos">
+    <h2>Hitos Técnicos</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Continuidad Operativa</h3>
+        <p>Gestión de infraestructura con uptime del 99.9% en entornos críticos (VMware/Hyper-V)[cite: 39].</p>
+      </div>
+      <div class="card">
+        <h3>Seguridad Física & Lógica</h3>
+        <p>Experiencia en mantenimiento de infraestructura crítica y certificación de enlaces de fibra óptica[cite: 70, 71].</p>
+      </div>
+      <div class="card">
+        <h3>Automatización</h3>
+        <p>Reducción de tiempos operativos mediante scripts personalizados para backups y monitoreo[cite: 41].</p>
+      </div>
     </div>
   </section>
 
-  <!-- Contacto -->
-  <section id="contacto">
-    <h2>Contacto & Redes</h2>
-    <p>¿Buscas fortalecer tu equipo de seguridad o soporte TI? Conectemos.</p>
-    <a href="https://www.linkedin.com/in/valentina-mendoza-9b1a4493/" target="_blank" class="btn-contact">🔗 LinkedIn</a>
-    <a href="https://wa.me/56968672169" target="_blank" class="btn-contact">🟢 WhatsApp</a>
+  <section id="contacto" style="text-align:center">
+    <h2>Conectemos</h2>
+    <p style="margin-bottom:20px">Disponible para peritajes de parte y consultorías técnicas en Santiago[cite: 22, 29].</p>
+    <a href="https://www.linkedin.com/in/valentina-mendoza-9b1a4493/" target="_blank" class="btn">LinkedIn</a>
+    <a href="https://wa.me/56968672169" target="_blank" class="btn" style="background:rgba(0,255,149,0.1)">WhatsApp Directo</a>
   </section>
 </div>
 
 <footer>
-  © 2026 Valentina Mendoza · Techsola_cl · Santiago, Chile
+  © 2026 Valentina Mendoza · Santiago, Chile [cite: 22]
 </footer>
 
 <script>
-// Matrix effect
 const canvas=document.getElementById('matrix'),ctx=canvas.getContext('2d');
 function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight}
 resize();window.addEventListener('resize',resize);
