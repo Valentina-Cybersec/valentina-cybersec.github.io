@@ -12,47 +12,34 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Inter,sans-serif;background:var(--bg);color:#d8e9e2;line-height:1.6;overflow-x:hidden}
-
-/* Efecto de fondo sutil */
 #matrix{position:fixed;inset:0;z-index:-1;opacity:0.08}
 
-/* Navegación Adaptable */
 nav{display:flex;justify-content:space-between;align-items:center;padding:15px 5%;background:rgba(5,8,10,0.95);position:sticky;top:0;backdrop-filter:blur(10px);z-index:100;border-bottom:1px solid rgba(0,255,149,0.1)}
 .brand{font-weight:700;color:var(--neon);letter-spacing:1px;font-size:1.1rem}
-.navlinks a{color:var(--muted);margin-left:15px;text-decoration:none;font-size:0.8rem;font-weight:600;transition:0.3s}
-.navlinks a:hover{color:var(--neon)}
+.navlinks a{color:var(--muted);margin-left:15px;text-decoration:none;font-size:0.8rem;font-weight:600}
 
 .container{max-width:var(--maxwidth);margin:0 auto;padding:0 20px}
+section{margin:25px 0;padding:40px;background:rgba(15,20,24,0.6);border-radius:12px;border:1px solid rgba(0,255,149,0.05)}
 
-/* Secciones Responsivas */
-section{margin:25px 0;padding:30px;background:rgba(15,20,24,0.6);border-radius:12px;border:1px solid rgba(0,255,149,0.05)}
-h1{color:var(--neon);font-size:clamp(1.7rem, 6vw, 2.8rem);margin-bottom:10px;line-height:1.2}
-h2{color:var(--neon);font-size:1.2rem;margin-bottom:20px;text-transform:uppercase;letter-spacing:1px}
-h3{color:var(--primary);margin-bottom:8px;font-size:1.1rem}
+h1{color:var(--neon);font-size:clamp(1.8rem, 6vw, 2.8rem);margin-bottom:10px}
+h2{color:var(--neon);font-size:1.2rem;margin-bottom:25px;text-transform:uppercase;letter-spacing:1px;border-left:3px solid var(--neon);padding-left:15px}
+h3{color:var(--primary);margin-bottom:10px}
 
-/* Grid Dinámico: 1 columna en móvil, 2 en tablet, 3 en PC */
-.grid{display:grid;grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:20px}
+.grid{display:grid;grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap:25px}
+.card{background:var(--card);padding:25px;border-radius:10px;border:1px solid rgba(0,255,149,0.05);transition:0.3s;height:100%;display:flex;flex-direction:column}
+.card:hover{border-color:var(--neon);transform:translateY(-5px);background:rgba(0,255,149,0.02)}
 
-.card{background:var(--card);padding:20px;border-radius:10px;border:1px solid rgba(0,255,149,0.05);transition:0.3s;display:flex;flex-direction:column;height:100%}
-.card:hover{border-color:var(--neon);transform:translateY(-3px)}
-
-.category{color:var(--primary);font-size:0.7rem;font-weight:700;text-transform:uppercase;margin-bottom:5px;display:block}
-
-/* Botones Adaptables */
-.btn{display:inline-flex;padding:12px 20px;margin-top:auto;border:1px solid var(--neon);color:var(--neon);text-decoration:none;border-radius:4px;font-weight:600;font-size:0.85rem;transition:0.3s;width:fit-content;justify-content:center}
+.tag{background:rgba(0,255,149,0.1);color:var(--neon);padding:4px 10px;border-radius:4px;font-size:0.7rem;font-weight:700;margin-bottom:15px;display:inline-block}
+.btn{display:inline-flex;padding:12px 20px;margin-top:auto;border:1px solid var(--neon);color:var(--neon);text-decoration:none;border-radius:4px;font-weight:600;transition:0.3s;justify-content:center}
 .btn-main{background:var(--neon);color:#000}
-.btn:hover{box-shadow:0 0 15px rgba(0,255,149,0.3);background:var(--neon);color:#000}
+.btn:hover{box-shadow:0 0 20px rgba(0,255,149,0.3);background:var(--neon);color:#000}
 
-/* Ajustes para móviles (Pantallas pequeñas) */
 @media (max-width: 600px) {
-  nav{flex-direction:column; gap:10px; padding:15px 2%}
-  .navlinks{display:flex; justify-content:center; width:100%}
-  .navlinks a{margin:0 8px; font-size: 0.75rem}
-  section{padding:20px; margin:15px 0}
-  .btn{width:100%; margin-right:0} /* Botones full ancho en móvil */
+  nav{flex-direction:column; gap:10px; text-align:center}
+  section{padding:25px; margin:15px 0}
+  .btn{width:100%}
 }
-
-footer{text-align:center;padding:40px;color:var(--muted);font-size:0.75rem}
+footer{text-align:center;padding:50px;color:var(--muted);font-size:0.8rem;border-top:1px solid rgba(0,255,149,0.05)}
 </style>
 </head>
 <body>
@@ -61,68 +48,73 @@ footer{text-align:center;padding:40px;color:var(--muted);font-size:0.75rem}
 <nav>
   <div class="brand">VM | FORENSIC & TECH</div>
   <div class="navlinks">
+    <a href="#soluciones">Soluciones</a>
     <a href="#proyectos">Proyectos</a>
-    <a href="#servicios">Servicios</a>
     <a href="#contacto">Contacto</a>
   </div>
 </nav>
 
 <div class="container">
-  <section id="inicio" style="text-align:center;background:none;border:none;padding:60px 0">
-    <h1>Estrategia Digital & Evidencia Forense</h1>
-    <p style="color:var(--muted);max-width:700px;margin:15px auto;font-size:1.1rem">
-      Consultoría técnica en ciberseguridad, infraestructura de misión crítica y peritajes judiciales.
+  <section id="inicio" style="text-align:center;background:none;border:none;padding:80px 0">
+    <h1>Soluciones Tecnológicas & Peritaje Judicial</h1>
+    <p style="color:var(--muted);max-width:800px;margin:20px auto;font-size:1.1rem">
+      Consultoría experta en Ciberseguridad, Infraestructura TI y Análisis Forense Digital. Elevamos el estándar técnico de su hogar o empresa.
     </p>
-    <a href="https://wa.me/56968672169" class="btn btn-main">Consultar Servicio</a>
+    <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap">
+      <a href="https://wa.me/56968672169" class="btn btn-main">Consultoría Inmediata</a>
+      <a href="#soluciones" class="btn">Ver Catálogo de Servicios</a>
+    </div>
+  </section>
+
+  <section id="soluciones">
+    <h2>Nuestras Soluciones</h2>
+    <div class="grid">
+      <div class="card">
+        <span class="tag">JUDICIAL / LEGAL</span>
+        <h3>Peritaje de Parte</h3>
+        <p>Certificación de chats, correos y preservación de evidencia digital con cadena de custodia para procesos legales.</p>
+      </div>
+      <div class="card">
+        <span class="tag">SOPORTE AVANZADO</span>
+        <h3>Hardware & Networking</h3>
+        <p>Reparación de nivel ingeniería, optimización de sistemas, instalación de redes y mantenimiento de servidores.</p>
+      </div>
+      <div class="card">
+        <span class="tag">CIBERSEGURIDAD</span>
+        <h3>Auditoría & Respaldo</h3>
+        <p>Escaneo de vulnerabilidades, respuesta ante incidentes y protección de datos críticos ante pérdidas o ataques.</p>
+      </div>
+    </div>
   </section>
 
   <section id="proyectos">
-    <h2>Proyectos & Auditorías</h2>
+    <h2>Proyectos & Capacidades</h2>
     <div class="grid">
       <div class="card">
-        <span class="category">SOFTWARE PROPIO</span>
         <h3>MitraScan</h3>
-        <p>Automatización de auditorías web con Nmap y Nuclei. Visualización de reportes técnicos de vulnerabilidades.</p>
-        <a href="https://valentina-cybersec.github.io/mitrascan-reports/" target="_blank" class="btn">Ver Reportes</a>
+        <p>Herramienta propia de automatización para auditorías web y reportes técnicos de seguridad con Nmap y Nuclei.</p>
+        <a href="https://valentina-cybersec.github.io/mitrascan-reports/" target="_blank" class="btn">Ver Demo de Reportes</a>
       </div>
       <div class="card">
-        <span class="category">AUDITORÍA MUNICIPAL</span>
-        <h3>Plan IRP NIST</h3>
-        <p>Plan de Respuesta ante Incidentes diseñado para infraestructura pública crítica bajo estándares internacionales.</p>
+        <h3>Plan IRP Municipal</h3>
+        <p>Diseño de estrategia de respuesta ante incidentes para infraestructura pública bajo marco NIST SP 800-61.</p>
       </div>
       <div class="card">
-        <span class="category">PERITAJE</span>
-        <h3>Informes Judiciales</h3>
-        <p>Análisis de intrusiones y aseguramiento de evidencia digital para procesos en tribunales chilenos.</p>
+        <h3>Infraestructura Crítica</h3>
+        <p>Experiencia en administración de centros de datos de alta escala y entornos de misión crítica.</p>
       </div>
     </div>
   </section>
 
-  <section id="servicios">
-    <h2>Servicios Especializados</h2>
-    <div class="grid">
-      <div class="card">
-        <span class="category">PERITAJE DE PARTE</span>
-        <h3>Certificación Digital</h3>
-        <p>Preservación de evidencia en WhatsApp y correos electrónicos con firma de integridad SHA-256.</p>
-      </div>
-      <div class="card">
-        <span class="category">SOPORTE AVANZADO</span>
-        <h3>Infraestructura TI</h3>
-        <p>Administración de servidores, redes y optimización de hardware para empresas y particulares.</p>
-      </div>
-      <div class="card">
-        <span class="category">SEGURIDAD OPERATIVA</span>
-        <h3>Análisis de Vulnerabilidades</h3>
-        <p>Escaneo y mitigación de riesgos en redes corporativas para prevenir exfiltración de datos.</p>
-      </div>
-    </div>
+  <section id="respaldo">
+    <h2>Trayectoria Profesional</h2>
+    <p><b>Valentina Mendoza</b> es Ingeniera (c) en Ciberseguridad, titulada con distinción máxima (6,0). Con más de 8 años en el sector, ha colaborado en la gestión tecnológica de entidades municipales y multinacionales como <b>Microsoft Datacenter</b> y <b>Enex</b>.</p>
   </section>
 
-  <section id="contacto" style="text-align:center;border-color:var(--neon); background: rgba(0,255,149,0.02)">
-    <h2>¿Hablemos sobre tu caso?</h2>
-    <p style="margin-bottom:20px">Disponible para asesorías forenses inmediatas y soporte técnico de alto nivel.</p>
-    <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap">
+  <section id="contacto" style="text-align:center; background: rgba(0,255,149,0.03)">
+    <h2>¿Hablemos sobre tu proyecto?</h2>
+    <p style="margin-bottom:25px">Asesoría técnica para abogados, empresas y particulares en la Región Metropolitana.</p>
+    <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap">
       <a href="https://wa.me/56968672169" target="_blank" class="btn btn-main">🟢 WhatsApp Directo</a>
       <a href="https://www.linkedin.com/in/valentina-mendoza-9b1a4493/" target="_blank" class="btn">LinkedIn</a>
     </div>
@@ -134,7 +126,6 @@ footer{text-align:center;padding:40px;color:var(--muted);font-size:0.75rem}
 </footer>
 
 <script>
-// Efecto Matrix mejorado para rendimiento móvil
 const canvas=document.getElementById('matrix'),ctx=canvas.getContext('2d');
 function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight}
 resize();window.addEventListener('resize',resize);
