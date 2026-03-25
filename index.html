@@ -8,23 +8,26 @@
 <style>
 :root {
   --bg:#06090d; --muted:#99bfb0; --neon:#00ff95; --card:#0b1114;
-  --primary:#38bdf8; --maxwidth:1000px;
+  --primary:#38bdf8; --maxwidth:1100px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Inter,sans-serif;background:var(--bg);color:#d8e9e2;line-height:1.6;overflow-x:hidden}
 #matrix{position:fixed;inset:0;z-index:-1;opacity:0.08}
 nav{display:flex;justify-content:space-between;align-items:center;padding:15px 5%;background:rgba(5,8,10,0.9);position:sticky;top:0;backdrop-filter:blur(10px);z-index:100}
 .brand{font-weight:700;color:var(--neon);letter-spacing:1px;font-size:1.2rem}
-.navlinks a{color:var(--muted);margin-left:20px;text-decoration:none;font-size:0.85rem}
+.navlinks a{color:var(--muted);margin-left:20px;text-decoration:none;font-size:0.85rem;font-weight:600}
 .container{max-width:var(--maxwidth);margin:0 auto;padding:0 20px}
 section{margin:30px 0;padding:40px;background:rgba(15,20,24,0.6);border-radius:12px;border:1px solid rgba(0,255,149,0.05)}
-h1{color:var(--neon);font-size:clamp(1.8rem,5vw,2.5rem);margin-bottom:10px}
+h1{color:var(--neon);font-size:clamp(1.8rem,5vw,2.8rem);margin-bottom:10px}
+h2{color:var(--neon);font-size:1.3rem;margin-bottom:25px;text-transform:uppercase;letter-spacing:1px}
+h3{color:var(--primary);margin-bottom:10px;font-size:1.1rem}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.card{background:var(--card);padding:20px;border-radius:10px;border:1px solid rgba(0,255,149,0.05);transition:0.3s}
-.card:hover{border-color:var(--neon);background:rgba(0,255,149,0.02)}
-.category{color:var(--primary);font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:5px;display:block}
-.btn{display:inline-flex;padding:10px 20px;margin-top:15px;border:1px solid var(--neon);color:var(--neon);text-decoration:none;border-radius:4px;font-weight:600;font-size:0.85rem;transition:0.3s}
+.card{background:var(--card);padding:25px;border-radius:10px;border:1px solid rgba(0,255,149,0.05);transition:0.3s;display:flex;flex-direction:column}
+.card:hover{border-color:var(--neon);transform:translateY(-3px)}
+.category{color:var(--primary);font-size:0.7rem;font-weight:700;text-transform:uppercase;margin-bottom:5px;display:block}
+.btn{display:inline-flex;padding:10px 18px;margin-top:auto;border:1px solid var(--neon);color:var(--neon);text-decoration:none;border-radius:4px;font-weight:600;font-size:0.8rem;transition:0.3s;width:fit-content}
 .btn-main{background:var(--neon);color:#000}
+.btn:hover{box-shadow:0 0 15px rgba(0,255,149,0.3);background:var(--neon);color:#000}
 footer{text-align:center;padding:30px;color:var(--muted);font-size:0.75rem}
 </style>
 </head>
@@ -35,47 +38,73 @@ footer{text-align:center;padding:30px;color:var(--muted);font-size:0.75rem}
   <div class="brand">VM | FORENSIC & TECH</div>
   <div class="navlinks">
     <a href="#servicios">Servicios</a>
-    <a href="#trayectoria">Trayectoria</a>
+    <a href="#proyectos">Proyectos</a>
     <a href="#contacto">Contacto</a>
   </div>
 </nav>
 
 <div class="container">
-  <section id="inicio" style="text-align:center;background:none;border:none;padding:60px 0">
+  <section id="inicio" style="text-align:center;background:none;border:none;padding:70px 0">
     <h1>Estrategia Digital & Evidencia Forense</h1>
-    <p style="color:var(--muted);max-width:600px;margin:10px auto">Soluciones técnicas avanzadas y peritajes informáticos con respaldo profesional.</p>
-    <a href="https://wa.me/56968672169" class="btn btn-main">Consultar ahora</a>
+    <p style="color:var(--muted);max-width:750px;margin:15px auto;font-size:1.1rem">
+      Consultoría técnica especializada en ciberseguridad, infraestructura de servidores y peritajes informáticos con validez legal.
+    </p>
+    <a href="https://wa.me/56968672169" class="btn btn-main" style="padding:12px 25px">Consultar Servicio</a>
   </section>
 
-  <section id="servicios">
+  <section id="proyectos">
+    <h2>Proyectos & Auditorías</h2>
     <div class="grid">
       <div class="card">
-        <span class="category">Área Judicial</span>
-        <h3>Peritajes de Parte</h3>
-        <p>Certificación de evidencia, recuperación de datos y análisis forense para procesos legales.</p>
+        <span class="category">HERRAMIENTA PROPIA</span>
+        <h3>MitraScan</h3>
+        <p>Automatización de auditorías web y reportes técnicos con Nmap y Nuclei. Integración de análisis de vulnerabilidades.</p>
+        <a href="https://valentina-cybersec.github.io/mitrascan-reports/" target="_blank" class="btn">Ver Reportes</a>
       </div>
       <div class="card">
-        <span class="category">Área Técnica</span>
-        <h3>Soporte & Infraestructura</h3>
-        <p>Mantenimiento crítico de servidores, redes y optimización de hardware empresarial.</p>
+        <span class="category">MARCO NIST</span>
+        <h3>Plan IRP Municipal</h3>
+        <p>Diseño y ejecución de Plan de Respuesta ante Incidentes para infraestructura pública crítica en Cerro Navia.</p>
       </div>
       <div class="card">
-        <span class="category">Ciberseguridad</span>
-        <h3>Auditoría Operacional</h3>
-        <p>Detección de vulnerabilidades y respuesta ante incidentes en entornos corporativos.</p>
+        <span class="category">FORENSE</span>
+        <h3>Informe de Red Judicial</h3>
+        <p>Diagnóstico de intrusiones y vulnerabilidades con evidencia verificable para uso en tribunales o auditorías.</p>
       </div>
     </div>
   </section>
 
-  <section id="trayectoria" style="padding:30px">
-    <h2 style="color:var(--neon);font-size:1.1rem;margin-bottom:15px">RESPALDO PROFESIONAL</h2>
-    <p style="font-size:0.9rem">Ingeniera (c) con experiencia en infraestructura crítica (Microsoft Datacenter, Sector Público). Titulada con distinción máxima y especialista en cumplimiento digital.</p>
+  <section id="servicios">
+    <h2>Áreas de Especialidad</h2>
+    <div class="grid">
+      <div class="card">
+        <span class="category">JURÍDICO</span>
+        <h3>Peritaje de Parte</h3>
+        <p>Certificación de chats, correos y preservación de evidencia digital bajo cadena de custodia (SHA-256).</p>
+      </div>
+      <div class="card">
+        <span class="category">INFRAESTRUCTURA</span>
+        <h3>Soporte TI Avanzado</h3>
+        <p>Optimización, reparación y administración de servidores (Linux/Windows) y redes de alta disponibilidad.</p>
+      </div>
+      <div class="card">
+        <span class="category">SEGURIDAD</span>
+        <h3>Continuidad Operativa</h3>
+        <p>Implementación de medidas de seguridad lógica y física para garantizar el uptime de servicios críticos.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="respaldo" style="padding:30px">
+    <h2 style="color:var(--neon);font-size:1.1rem;margin-bottom:10px">TRAYECTORIA PROFESIONAL</h2>
+    <p style="font-size:0.9rem">Ingeniera (c) con +8 años de experiencia técnica. Trayectoria destacada en <b>Microsoft Datacenter</b>, administración municipal y sector privado. Especialista en cumplimiento digital titulada con distinción máxima.</p>
   </section>
 
   <section id="contacto" style="text-align:center;border-color:var(--neon)">
-    <h2 style="color:var(--neon);font-size:1.2rem;margin-bottom:10px">¿Necesitas un experto?</h2>
-    <p style="font-size:0.9rem;margin-bottom:15px">Hablemos por WhatsApp para una evaluación rápida de tu caso o requerimiento técnico.</p>
-    <a href="https://wa.me/56968672169" target="_blank" class="btn">🟢 Enviar Mensaje</a>
+    <h2 style="color:var(--neon);font-size:1.2rem;margin-bottom:10px">¿Necesitas un experto técnico?</h2>
+    <p style="font-size:0.9rem;margin-bottom:15px">Hablemos por WhatsApp para evaluar tu caso judicial o requerimiento de infraestructura.</p>
+    <a href="https://wa.me/56968672169" target="_blank" class="btn btn-main">🟢 Enviar Mensaje Directo</a>
+    <a href="https://www.linkedin.com/in/valentina-mendoza-9b1a4493/" target="_blank" class="btn" style="margin-left:10px">LinkedIn</a>
   </section>
 </div>
 
