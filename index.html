@@ -3,106 +3,84 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Valentina Mendoza | Portafolio de Soluciones TI & Forense</title>
+<title>VM | Forensic & Tech Solutions</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg:#06090d; --muted:#99bfb0; --neon:#00ff95; --card:#0b1114;
-  --primary:#38bdf8; --maxwidth:1100px;
+  --primary:#38bdf8; --maxwidth:1000px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Inter,sans-serif;background:var(--bg);color:#d8e9e2;line-height:1.6;overflow-x:hidden}
-#matrix{position:fixed;inset:0;z-index:-1;opacity:0.1}
-nav{display:flex;justify-content:space-between;align-items:center;padding:15px 5%;background:rgba(5,8,10,0.9);border-bottom:1px solid rgba(0,255,149,0.1);position:sticky;top:0;backdrop-filter:blur(10px);z-index:100}
-.brand{display:flex;align-items:center;gap:12px;font-weight:700;color:var(--neon)}
-.logo{width:40px;height:40px;border-radius:6px;background:var(--neon);display:flex;align-items:center;justify-content:center;color:#01110a}
-.navlinks a{color:var(--muted);margin-left:20px;text-decoration:none;font-size:0.9rem;font-weight:600}
+#matrix{position:fixed;inset:0;z-index:-1;opacity:0.08}
+nav{display:flex;justify-content:space-between;align-items:center;padding:15px 5%;background:rgba(5,8,10,0.9);position:sticky;top:0;backdrop-filter:blur(10px);z-index:100}
+.brand{font-weight:700;color:var(--neon);letter-spacing:1px;font-size:1.2rem}
+.navlinks a{color:var(--muted);margin-left:20px;text-decoration:none;font-size:0.85rem}
 .container{max-width:var(--maxwidth);margin:0 auto;padding:0 20px}
-section{margin:40px 0;padding:40px;background:rgba(15,20,24,0.7);border-radius:15px;border:1px solid rgba(0,255,149,0.05)}
-h1{color:var(--neon);font-size:clamp(2rem,5vw,3rem);margin-bottom:10px}
-h2{color:var(--neon);margin-bottom:30px;font-size:1.4rem;text-transform:uppercase;letter-spacing:1px}
-h3{color:var(--primary);margin-bottom:10px}
+section{margin:30px 0;padding:40px;background:rgba(15,20,24,0.6);border-radius:12px;border:1px solid rgba(0,255,149,0.05)}
+h1{color:var(--neon);font-size:clamp(1.8rem,5vw,2.5rem);margin-bottom:10px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.card{background:var(--card);padding:25px;border-radius:12px;border:1px solid rgba(0,255,149,0.05);transition:0.3s}
-.card:hover{border-color:var(--neon);transform:translateY(-3px)}
-.tag{background:rgba(56,189,248,0.1);color:var(--primary);padding:3px 8px;border-radius:4px;font-size:0.7rem;font-weight:700;margin-bottom:10px;display:inline-block}
-.btn{display:inline-flex;padding:10px 20px;margin-top:15px;border:1px solid var(--neon);color:var(--neon);text-decoration:none;border-radius:6px;font-weight:600;transition:0.3s;font-size:0.9rem}
+.card{background:var(--card);padding:20px;border-radius:10px;border:1px solid rgba(0,255,149,0.05);transition:0.3s}
+.card:hover{border-color:var(--neon);background:rgba(0,255,149,0.02)}
+.category{color:var(--primary);font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:5px;display:block}
+.btn{display:inline-flex;padding:10px 20px;margin-top:15px;border:1px solid var(--neon);color:var(--neon);text-decoration:none;border-radius:4px;font-weight:600;font-size:0.85rem;transition:0.3s}
 .btn-main{background:var(--neon);color:#000}
-.btn:hover{box-shadow:0 0 15px rgba(0,255,149,0.3)}
-footer{text-align:center;padding:40px;color:var(--muted);font-size:0.8rem}
-@media(max-width:768px){section{padding:25px}}
+footer{text-align:center;padding:30px;color:var(--muted);font-size:0.75rem}
 </style>
 </head>
 <body>
 <canvas id="matrix"></canvas>
 
 <nav>
-  <div class="brand"><div class="logo">VM</div> Valentina Mendoza</div>
+  <div class="brand">VM | FORENSIC & TECH</div>
   <div class="navlinks">
     <a href="#servicios">Servicios</a>
-    <a href="#hitos">Hitos</a>
+    <a href="#trayectoria">Trayectoria</a>
     <a href="#contacto">Contacto</a>
   </div>
 </nav>
 
 <div class="container">
-  <section id="inicio" style="text-align:center;background:none;border:none;padding:80px 0">
-    <h1>Soluciones TI & Peritaje Forense</h1>
-    <p style="font-size:1.2rem;color:var(--muted);max-width:700px;margin:15px auto">
-      Especialista en Infraestructura y Ciberseguridad[cite: 21, 24]. Transformo incidentes técnicos en evidencia verificable para procesos legales[cite: 25, 52].
-    </p>
-    <a href="https://wa.me/56968672169" class="btn btn-main">Consultar Servicio</a>
+  <section id="inicio" style="text-align:center;background:none;border:none;padding:60px 0">
+    <h1>Estrategia Digital & Evidencia Forense</h1>
+    <p style="color:var(--muted);max-width:600px;margin:10px auto">Soluciones técnicas avanzadas y peritajes informáticos con respaldo profesional.</p>
+    <a href="https://wa.me/56968672169" class="btn btn-main">Consultar ahora</a>
   </section>
 
   <section id="servicios">
-    <h2>¿En qué puedo ayudarte?</h2>
     <div class="grid">
       <div class="card">
-        <span class="tag">FORENSE DIGITAL</span>
-        <h3>Certificación de Evidencia</h3>
-        <p>Validación de chats, correos y archivos para juicios con integridad garantizada (SHA-256)[cite: 26, 53].</p>
+        <span class="category">Área Judicial</span>
+        <h3>Peritajes de Parte</h3>
+        <p>Certificación de evidencia, recuperación de datos y análisis forense para procesos legales.</p>
       </div>
       <div class="card">
-        <span class="tag">INFRAESTRUCTURA</span>
-        <h3>Soporte & Optimización</h3>
-        <p>Reparación avanzada, actualización de hardware y administración de servidores críticos[cite: 58, 60].</p>
+        <span class="category">Área Técnica</span>
+        <h3>Soporte & Infraestructura</h3>
+        <p>Mantenimiento crítico de servidores, redes y optimización de hardware empresarial.</p>
       </div>
       <div class="card">
-        <span class="tag">CIBERSEGURIDAD</span>
-        <h3>Auditoría de Redes</h3>
-        <p>Identificación de vulnerabilidades y accesos no autorizados en sistemas corporativos[cite: 25, 50].</p>
+        <span class="category">Ciberseguridad</span>
+        <h3>Auditoría Operacional</h3>
+        <p>Detección de vulnerabilidades y respuesta ante incidentes en entornos corporativos.</p>
       </div>
     </div>
   </section>
 
-  <section id="hitos">
-    <h2>Hitos Técnicos</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Continuidad Operativa</h3>
-        <p>Gestión de infraestructura con uptime del 99.9% en entornos críticos (VMware/Hyper-V)[cite: 39].</p>
-      </div>
-      <div class="card">
-        <h3>Seguridad Física & Lógica</h3>
-        <p>Experiencia en mantenimiento de infraestructura crítica y certificación de enlaces de fibra óptica[cite: 70, 71].</p>
-      </div>
-      <div class="card">
-        <h3>Automatización</h3>
-        <p>Reducción de tiempos operativos mediante scripts personalizados para backups y monitoreo[cite: 41].</p>
-      </div>
-    </div>
+  <section id="trayectoria" style="padding:30px">
+    <h2 style="color:var(--neon);font-size:1.1rem;margin-bottom:15px">RESPALDO PROFESIONAL</h2>
+    <p style="font-size:0.9rem">Ingeniera (c) con experiencia en infraestructura crítica (Microsoft Datacenter, Sector Público). Titulada con distinción máxima y especialista en cumplimiento digital.</p>
   </section>
 
-  <section id="contacto" style="text-align:center">
-    <h2>Conectemos</h2>
-    <p style="margin-bottom:20px">Disponible para peritajes de parte y consultorías técnicas en Santiago[cite: 22, 29].</p>
-    <a href="https://www.linkedin.com/in/valentina-mendoza-9b1a4493/" target="_blank" class="btn">LinkedIn</a>
-    <a href="https://wa.me/56968672169" target="_blank" class="btn" style="background:rgba(0,255,149,0.1)">WhatsApp Directo</a>
+  <section id="contacto" style="text-align:center;border-color:var(--neon)">
+    <h2 style="color:var(--neon);font-size:1.2rem;margin-bottom:10px">¿Necesitas un experto?</h2>
+    <p style="font-size:0.9rem;margin-bottom:15px">Hablemos por WhatsApp para una evaluación rápida de tu caso o requerimiento técnico.</p>
+    <a href="https://wa.me/56968672169" target="_blank" class="btn">🟢 Enviar Mensaje</a>
   </section>
 </div>
 
 <footer>
-  © 2026 Valentina Mendoza · Santiago, Chile [cite: 22]
+  © 2026 Valentina Mendoza · VM Forensic & Tech · Santiago, Chile
 </footer>
 
 <script>
