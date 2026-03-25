@@ -12,23 +12,47 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Inter,sans-serif;background:var(--bg);color:#d8e9e2;line-height:1.6;overflow-x:hidden}
+
+/* Efecto de fondo sutil */
 #matrix{position:fixed;inset:0;z-index:-1;opacity:0.08}
-nav{display:flex;justify-content:space-between;align-items:center;padding:15px 5%;background:rgba(5,8,10,0.9);position:sticky;top:0;backdrop-filter:blur(10px);z-index:100}
-.brand{font-weight:700;color:var(--neon);letter-spacing:1px;font-size:1.2rem}
-.navlinks a{color:var(--muted);margin-left:20px;text-decoration:none;font-size:0.85rem;font-weight:600}
+
+/* Navegación Adaptable */
+nav{display:flex;justify-content:space-between;align-items:center;padding:15px 5%;background:rgba(5,8,10,0.95);position:sticky;top:0;backdrop-filter:blur(10px);z-index:100;border-bottom:1px solid rgba(0,255,149,0.1)}
+.brand{font-weight:700;color:var(--neon);letter-spacing:1px;font-size:1.1rem}
+.navlinks a{color:var(--muted);margin-left:15px;text-decoration:none;font-size:0.8rem;font-weight:600;transition:0.3s}
+.navlinks a:hover{color:var(--neon)}
+
 .container{max-width:var(--maxwidth);margin:0 auto;padding:0 20px}
-section{margin:30px 0;padding:40px;background:rgba(15,20,24,0.6);border-radius:12px;border:1px solid rgba(0,255,149,0.05)}
-h1{color:var(--neon);font-size:clamp(1.8rem,5vw,2.8rem);margin-bottom:10px}
-h2{color:var(--neon);font-size:1.3rem;margin-bottom:25px;text-transform:uppercase;letter-spacing:1px}
-h3{color:var(--primary);margin-bottom:10px;font-size:1.1rem}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.card{background:var(--card);padding:25px;border-radius:10px;border:1px solid rgba(0,255,149,0.05);transition:0.3s;display:flex;flex-direction:column}
+
+/* Secciones Responsivas */
+section{margin:25px 0;padding:30px;background:rgba(15,20,24,0.6);border-radius:12px;border:1px solid rgba(0,255,149,0.05)}
+h1{color:var(--neon);font-size:clamp(1.7rem, 6vw, 2.8rem);margin-bottom:10px;line-height:1.2}
+h2{color:var(--neon);font-size:1.2rem;margin-bottom:20px;text-transform:uppercase;letter-spacing:1px}
+h3{color:var(--primary);margin-bottom:8px;font-size:1.1rem}
+
+/* Grid Dinámico: 1 columna en móvil, 2 en tablet, 3 en PC */
+.grid{display:grid;grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:20px}
+
+.card{background:var(--card);padding:20px;border-radius:10px;border:1px solid rgba(0,255,149,0.05);transition:0.3s;display:flex;flex-direction:column;height:100%}
 .card:hover{border-color:var(--neon);transform:translateY(-3px)}
+
 .category{color:var(--primary);font-size:0.7rem;font-weight:700;text-transform:uppercase;margin-bottom:5px;display:block}
-.btn{display:inline-flex;padding:10px 18px;margin-top:auto;border:1px solid var(--neon);color:var(--neon);text-decoration:none;border-radius:4px;font-weight:600;font-size:0.8rem;transition:0.3s;width:fit-content}
+
+/* Botones Adaptables */
+.btn{display:inline-flex;padding:12px 20px;margin-top:auto;border:1px solid var(--neon);color:var(--neon);text-decoration:none;border-radius:4px;font-weight:600;font-size:0.85rem;transition:0.3s;width:fit-content;justify-content:center}
 .btn-main{background:var(--neon);color:#000}
 .btn:hover{box-shadow:0 0 15px rgba(0,255,149,0.3);background:var(--neon);color:#000}
-footer{text-align:center;padding:30px;color:var(--muted);font-size:0.75rem}
+
+/* Ajustes para móviles (Pantallas pequeñas) */
+@media (max-width: 600px) {
+  nav{flex-direction:column; gap:10px; padding:15px 2%}
+  .navlinks{display:flex; justify-content:center; width:100%}
+  .navlinks a{margin:0 8px; font-size: 0.75rem}
+  section{padding:20px; margin:15px 0}
+  .btn{width:100%; margin-right:0} /* Botones full ancho en móvil */
+}
+
+footer{text-align:center;padding:40px;color:var(--muted);font-size:0.75rem}
 </style>
 </head>
 <body>
@@ -37,74 +61,71 @@ footer{text-align:center;padding:30px;color:var(--muted);font-size:0.75rem}
 <nav>
   <div class="brand">VM | FORENSIC & TECH</div>
   <div class="navlinks">
-    <a href="#servicios">Servicios</a>
     <a href="#proyectos">Proyectos</a>
+    <a href="#servicios">Servicios</a>
     <a href="#contacto">Contacto</a>
   </div>
 </nav>
 
 <div class="container">
-  <section id="inicio" style="text-align:center;background:none;border:none;padding:70px 0">
+  <section id="inicio" style="text-align:center;background:none;border:none;padding:60px 0">
     <h1>Estrategia Digital & Evidencia Forense</h1>
-    <p style="color:var(--muted);max-width:750px;margin:15px auto;font-size:1.1rem">
-      Consultoría técnica especializada en ciberseguridad, infraestructura de servidores y peritajes informáticos con validez legal.
+    <p style="color:var(--muted);max-width:700px;margin:15px auto;font-size:1.1rem">
+      Consultoría técnica en ciberseguridad, infraestructura de misión crítica y peritajes judiciales.
     </p>
-    <a href="https://wa.me/56968672169" class="btn btn-main" style="padding:12px 25px">Consultar Servicio</a>
+    <a href="https://wa.me/56968672169" class="btn btn-main">Consultar Servicio</a>
   </section>
 
   <section id="proyectos">
     <h2>Proyectos & Auditorías</h2>
     <div class="grid">
       <div class="card">
-        <span class="category">HERRAMIENTA PROPIA</span>
+        <span class="category">SOFTWARE PROPIO</span>
         <h3>MitraScan</h3>
-        <p>Automatización de auditorías web y reportes técnicos con Nmap y Nuclei. Integración de análisis de vulnerabilidades.</p>
+        <p>Automatización de auditorías web con Nmap y Nuclei. Visualización de reportes técnicos de vulnerabilidades.</p>
         <a href="https://valentina-cybersec.github.io/mitrascan-reports/" target="_blank" class="btn">Ver Reportes</a>
       </div>
       <div class="card">
-        <span class="category">MARCO NIST</span>
-        <h3>Plan IRP Municipal</h3>
-        <p>Diseño y ejecución de Plan de Respuesta ante Incidentes para infraestructura pública crítica en Cerro Navia.</p>
+        <span class="category">AUDITORÍA MUNICIPAL</span>
+        <h3>Plan IRP NIST</h3>
+        <p>Plan de Respuesta ante Incidentes diseñado para infraestructura pública crítica bajo estándares internacionales.</p>
       </div>
       <div class="card">
-        <span class="category">FORENSE</span>
-        <h3>Informe de Red Judicial</h3>
-        <p>Diagnóstico de intrusiones y vulnerabilidades con evidencia verificable para uso en tribunales o auditorías.</p>
+        <span class="category">PERITAJE</span>
+        <h3>Informes Judiciales</h3>
+        <p>Análisis de intrusiones y aseguramiento de evidencia digital para procesos en tribunales chilenos.</p>
       </div>
     </div>
   </section>
 
   <section id="servicios">
-    <h2>Áreas de Especialidad</h2>
+    <h2>Servicios Especializados</h2>
     <div class="grid">
       <div class="card">
-        <span class="category">JURÍDICO</span>
-        <h3>Peritaje de Parte</h3>
-        <p>Certificación de chats, correos y preservación de evidencia digital bajo cadena de custodia (SHA-256).</p>
+        <span class="category">PERITAJE DE PARTE</span>
+        <h3>Certificación Digital</h3>
+        <p>Preservación de evidencia en WhatsApp y correos electrónicos con firma de integridad SHA-256.</p>
       </div>
       <div class="card">
-        <span class="category">INFRAESTRUCTURA</span>
-        <h3>Soporte TI Avanzado</h3>
-        <p>Optimización, reparación y administración de servidores (Linux/Windows) y redes de alta disponibilidad.</p>
+        <span class="category">SOPORTE AVANZADO</span>
+        <h3>Infraestructura TI</h3>
+        <p>Administración de servidores, redes y optimización de hardware para empresas y particulares.</p>
       </div>
       <div class="card">
-        <span class="category">SEGURIDAD</span>
-        <h3>Continuidad Operativa</h3>
-        <p>Implementación de medidas de seguridad lógica y física para garantizar el uptime de servicios críticos.</p>
+        <span class="category">SEGURIDAD OPERATIVA</span>
+        <h3>Análisis de Vulnerabilidades</h3>
+        <p>Escaneo y mitigación de riesgos en redes corporativas para prevenir exfiltración de datos.</p>
       </div>
     </div>
   </section>
 
-  <section id="respaldo" style="padding:30px">
-    <h2 style="color:var(--neon);font-size:1.1rem;margin-bottom:10px">TRAYECTORIA PROFESIONAL</h2>
-    <p style="font-size:0.9rem">Ingeniera (c) con +8 años de experiencia técnica. Trayectoria destacada en <b>Microsoft Datacenter</b>, administración municipal y sector privado. Especialista en cumplimiento digital titulada con distinción máxima.</p>
-  </section>
-
-  <section id="contacto" style="text-align:center;border-color:var(--neon)">
-    <h2 style="color:var(--neon);font-size:1.2rem;margin-bottom:10px">¿Necesitas un experto técnico?</h2>
-    <p style="font-size:0.9rem;margin-bottom:15px">Hablemos por WhatsApp para evaluar tu caso judicial o requerimiento de infraestructura.</p>
-    <a href="https://wa.me/56968672169" target="_blank" class="btn btn-main">🟢 Enviar Mensaje Directo</a>
-    <a href="https://www.linkedin.com/in/valentina-mendoza-9b1a4493/" target="_blank" class="btn" style="margin-left:10px">LinkedIn</a>
+  <section id="contacto" style="text-align:center;border-color:var(--neon); background: rgba(0,255,149,0.02)">
+    <h2>¿Hablemos sobre tu caso?</h2>
+    <p style="margin-bottom:20px">Disponible para asesorías forenses inmediatas y soporte técnico de alto nivel.</p>
+    <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap">
+      <a href="https://wa.me/56968672169" target="_blank" class="btn btn-main">🟢 WhatsApp Directo</a>
+      <a href="https://www.linkedin.com/in/valentina-mendoza-9b1a4493/" target="_blank" class="btn">LinkedIn</a>
+    </div>
   </section>
 </div>
 
@@ -113,6 +134,7 @@ footer{text-align:center;padding:30px;color:var(--muted);font-size:0.75rem}
 </footer>
 
 <script>
+// Efecto Matrix mejorado para rendimiento móvil
 const canvas=document.getElementById('matrix'),ctx=canvas.getContext('2d');
 function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight}
 resize();window.addEventListener('resize',resize);
@@ -126,7 +148,7 @@ function draw(){
     drops[i]++;
   });
 }
-setInterval(draw,60);
+setInterval(draw,70);
 </script>
 </body>
 </html>
