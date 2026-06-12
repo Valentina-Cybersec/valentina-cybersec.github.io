@@ -1,7 +1,4 @@
 const questions = [
-{
-const questions = [
-
 {domain:"Activos Críticos",question:"¿Existe un inventario actualizado de equipos y sistemas?"},
 {domain:"Activos Críticos",question:"¿Se encuentran identificados los sistemas críticos para la operación?"},
 {domain:"Activos Críticos",question:"¿Se encuentran identificados los datos críticos de la organización?"},
