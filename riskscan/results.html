@@ -39,7 +39,28 @@ font-weight:bold;
 </head>
 
 <body>
+<script>
 
+const answers =
+JSON.parse(
+localStorage.getItem("riskscan_answers")
+) || [];
+
+const totalPoints =
+answers.reduce((a,b)=>a+b,0);
+
+const maxPoints =
+answers.length * 4;
+
+const score =
+Math.round(
+(totalPoints/maxPoints)*100
+);
+
+document.getElementById("score").textContent =
+score;
+
+</script>
 <div class="card">
 
 <h1>RiskScan Score</h1>
