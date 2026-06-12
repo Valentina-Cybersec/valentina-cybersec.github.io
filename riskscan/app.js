@@ -47,17 +47,16 @@ JSON.stringify(answers)
 window.location.href="results.html";
 
 return;
-
 }
 
 questionElement.textContent =
 questions[currentQuestion].question;
 
 counterElement.textContent =
-`Pregunta ${currentQuestion+1} de ${questions.length}`;
+`Pregunta ${currentQuestion + 1} de ${questions.length}`;
 
 progressBar.style.width =
-`${((currentQuestion+1)/questions.length)*100}%`;
+`${((currentQuestion + 1) / questions.length) * 100}%`;
 
 });
 
