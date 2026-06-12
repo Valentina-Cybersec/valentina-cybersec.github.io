@@ -1,64 +1,63 @@
-const questions = [
-{
-domain:"Activos Críticos",
-question:"¿Existe un inventario actualizado de equipos y sistemas?"
-},
-{
-domain:"Activos Críticos",
-question:"¿Se identificaron los sistemas críticos para la operación?"
-},
-{
-domain:"Activos Críticos",
-question:"¿Se identificaron los datos críticos?"
-},
-{
-domain:"Dependencia Humana",
-question:"¿Existe más de una persona capaz de administrar sistemas críticos?"
-},
-{
-domain:"Dependencia Humana",
-question:"¿Existen procedimientos documentados?"
-}
-];
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-let currentQuestion = 0;
-let answers = [];
+<title>RiskScan Resultado</title>
 
-const questionElement = document.querySelector(".question");
-const counterElement = document.querySelector(".counter");
-const progressBar = document.querySelector(".progress-bar");
-const buttons = document.querySelectorAll(".option");
+<style>
 
-buttons.forEach((button,index)=>{
-
-button.addEventListener("click",()=>{
-
-answers.push(index);
-
-currentQuestion++;
-
-if(currentQuestion >= questions.length){
-
-localStorage.setItem(
-"riskscan_answers",
-JSON.stringify(answers)
-);
-
-window.location.href="results.html";
-
-return;
-
+body{
+background:#06090d;
+color:white;
+font-family:Arial,sans-serif;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+margin:0;
 }
 
-questionElement.textContent =
-questions[currentQuestion].question;
+.card{
+background:#0b1114;
+padding:40px;
+border-radius:12px;
+text-align:center;
+max-width:700px;
+width:90%;
+}
 
-counterElement.textContent =
-`Pregunta ${currentQuestion+1} de ${questions.length}`;
+.score{
+font-size:4rem;
+color:#00ff95;
+font-weight:bold;
+}
 
-progressBar.style.width =
-`${((currentQuestion+1)/questions.length)*100}%`;
+</style>
 
-});
+</head>
 
-});
+<body>
+
+<div class="card">
+
+<h1>RiskScan Score</h1>
+
+<div class="score">
+72
+</div>
+
+<p>
+Nivel: Intermedio
+</p>
+
+<p>
+La organización presenta oportunidades de mejora
+en continuidad operacional y recuperación.
+</p>
+
+</div>
+
+</body>
+</html>
