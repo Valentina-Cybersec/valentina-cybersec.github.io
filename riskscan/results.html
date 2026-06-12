@@ -26,12 +26,25 @@ border-radius:12px;
 text-align:center;
 max-width:700px;
 width:90%;
+border:1px solid rgba(0,255,149,.1);
 }
 
 .score{
 font-size:4rem;
 color:#00ff95;
 font-weight:bold;
+margin:20px 0;
+}
+
+#nivel{
+font-size:1.3rem;
+margin:15px 0;
+}
+
+#mensaje{
+margin-top:20px;
+color:#cccccc;
+line-height:1.6;
 }
 
 </style>
@@ -39,6 +52,25 @@ font-weight:bold;
 </head>
 
 <body>
+
+<div class="card">
+
+<h1>RiskScan Score</h1>
+
+<div class="score" id="score">
+0
+</div>
+
+<p id="nivel">
+Calculando...
+</p>
+
+<p id="mensaje">
+Analizando resultados...
+</p>
+
+</div>
+
 <script>
 
 const answers =
@@ -53,32 +85,44 @@ const maxPoints =
 answers.length * 4;
 
 const score =
-Math.round(
-(totalPoints/maxPoints)*100
-);
+maxPoints > 0
+? Math.round((totalPoints/maxPoints)*100)
+: 0;
 
 document.getElementById("score").textContent =
 score;
 
+let nivel = "";
+let mensaje = "";
+
+if(score >= 85){
+nivel = "🟢 Resiliente";
+mensaje = "La organización presenta una alta capacidad de recuperación y continuidad operacional.";
+}
+else if(score >= 70){
+nivel = "🟢 Maduro";
+mensaje = "La organización cuenta con controles adecuados, aunque existen oportunidades de mejora.";
+}
+else if(score >= 50){
+nivel = "🟡 Intermedio";
+mensaje = "Existen riesgos que podrían afectar la continuidad operacional ante un incidente.";
+}
+else if(score >= 30){
+nivel = "🟠 Vulnerable";
+mensaje = "La organización presenta debilidades importantes en recuperación y resiliencia.";
+}
+else{
+nivel = "🔴 Crítico";
+mensaje = "Se recomienda abordar de forma prioritaria los riesgos identificados.";
+}
+
+document.getElementById("nivel").textContent =
+"Nivel: " + nivel;
+
+document.getElementById("mensaje").textContent =
+mensaje;
+
 </script>
-<div class="card">
-
-<h1>RiskScan Score</h1>
-
-<div class="score" id="score">
-0
-</div>
-
-<p>
-Nivel: Intermedio
-</p>
-
-<p>
-La organización presenta oportunidades de mejora
-en continuidad operacional y recuperación.
-</p>
-
-</div>
 
 </body>
 </html>
