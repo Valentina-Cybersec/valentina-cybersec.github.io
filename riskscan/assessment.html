@@ -1,1 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>RiskScan | Evaluación</title>
+
+<style>
+
+:root{
+--bg:#06090d;
+--card:#0b1114;
+--neon:#00ff95;
+--text:#d8e9e2;
+--muted:#99bfb0;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial,sans-serif;
+background:var(--bg);
+color:var(--text);
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:20px;
+}
+
+.container{
+max-width:700px;
+width:100%;
+}
+
+.card{
+background:var(--card);
+padding:30px;
+border-radius:12px;
+border:1px solid rgba(0,255,149,.1);
+}
+
+.progress{
+height:10px;
+background:#1b252b;
+border-radius:20px;
+overflow:hidden;
+margin-bottom:25px;
+}
+
+.progress-bar{
+height:100%;
+width:4%;
+background:var(--neon);
+}
+
+.counter{
+color:var(--muted);
+margin-bottom:15px;
+}
+
+.question{
+font-size:1.4rem;
+margin-bottom:25px;
+}
+
+.option{
+display:block;
+width:100%;
+padding:15px;
+margin-bottom:12px;
+background:#11181d;
+border:1px solid #24323a;
+color:white;
+border-radius:8px;
+cursor:pointer;
+text-align:left;
+}
+
+.option:hover{
+border-color:var(--neon);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<div class="progress">
+<div class="progress-bar"></div>
+</div>
+
+<div class="counter">
+Pregunta 1 de 25
+</div>
+
+<div class="question">
+¿Existe un inventario actualizado de equipos y sistemas?
+</div>
+
+<button class="option">No existe</button>
+<button class="option">Existe parcialmente</button>
+<button class="option">Existe formalmente</button>
+<button class="option">Se revisa periódicamente</button>
+<button class="option">Se revisa y mejora continuamente</button>
+
+</div>
+
+</div>
+
+</body>
+</html>
