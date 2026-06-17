@@ -56,6 +56,9 @@ line-height:1.6;
 <div class="card">
 
 <h1>RiskScan Score</h1>
+<p id="fecha" style="color:#99bfb0;margin-top:-10px;">
+Evaluación realizada: --
+</p>
 
 <div class="score" id="score">
 0
@@ -86,6 +89,16 @@ Hallazgo Principal
 <p id="hallazgo">
 Calculando hallazgo...
 </p>
+<h3 style="margin-top:30px;color:#00ff95;">
+Recomendaciones Prioritarias
+</h3>
+
+<div id="recomendaciones" style="
+text-align:left;
+margin-top:15px;
+line-height:1.8;
+">
+</div>
 
 </div>
 
@@ -140,6 +153,10 @@ maxPoints > 0
 
 document.getElementById("score").textContent =
 score;
+const hoy = new Date();
+
+document.getElementById("fecha").textContent =
+`Evaluación realizada: ${hoy.toLocaleDateString("es-CL")}`;
 
 let nivel = "";
 let mensaje = "";
@@ -225,8 +242,87 @@ hallazgo =
 
 document.getElementById("hallazgo").textContent =
 hallazgo;
+let recomendaciones = "";
+
+if(lowest === activos){
+
+recomendaciones = `
+<ul>
+<li>Crear inventario formal de activos.</li>
+<li>Clasificar información crítica.</li>
+<li>Revisar activos periódicamente.</li>
+</ul>
+`;
+
+}
+else if(lowest === ciber){
+
+recomendaciones = `
+<ul>
+<li>Implementar MFA.</li>
+<li>Aplicar actualizaciones periódicas.</li>
+<li>Revisar privilegios de acceso.</li>
+</ul>
+`;
+
+}
+else if(lowest === continuidad){
+
+recomendaciones = `
+<ul>
+<li>Documentar procedimientos de continuidad.</li>
+<li>Definir responsables operacionales.</li>
+<li>Realizar simulacros periódicos.</li>
+</ul>
+`;
+
+}
+else if(lowest === recuperacion){
+
+recomendaciones = `
+<ul>
+<li>Validar respaldos regularmente.</li>
+<li>Realizar pruebas de restauración.</li>
+<li>Mantener copias fuera del sitio.</li>
+</ul>
+`;
+
+}
+else{
+
+recomendaciones = `
+<ul>
+<li>Documentar procedimientos críticos.</li>
+<li>Capacitar personal alternativo.</li>
+<li>Reducir dependencia de personas clave.</li>
+</ul>
+`;
+
+}
+
+document.getElementById("recomendaciones").innerHTML =
+recomendaciones;
+<div style="margin-top:30px;">
+<button id="pdfBtn" style="
+background:#00ff95;
+color:black;
+border:none;
+padding:12px 25px;
+border-radius:6px;
+cursor:pointer;
+font-weight:bold;
+">
+📄 Descargar Informe
+</button>
+</div>
 
 </script>
 
 </body>
 </html>
+document.getElementById("pdfBtn")
+.addEventListener("click",()=>{
+
+window.print();
+
+});
