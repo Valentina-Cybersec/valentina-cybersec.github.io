@@ -262,47 +262,38 @@ const domainsDiv =
 document.getElementById("domains");
 
 domainsDiv.innerHTML = `
+<table style="
+width:100%;
+border-collapse:collapse;
+margin-top:15px;
+">
 
-<div style="margin-bottom:15px;">
-<strong>Activos Críticos</strong>
-<div style="background:#1b252b;height:10px;border-radius:10px;margin-top:5px;">
-<div style="background:#00ff95;height:10px;width:${activos}%;border-radius:10px;"></div>
-</div>
-<p>${activos}%</p>
-</div>
+<tr>
+<td style="padding:10px 0;">Activos Críticos</td>
+<td style="text-align:right;font-weight:bold;">${activos}%</td>
+</tr>
 
-<div style="margin-bottom:15px;">
-<strong>Ciberseguridad</strong>
-<div style="background:#1b252b;height:10px;border-radius:10px;margin-top:5px;">
-<div style="background:#00ff95;height:10px;width:${ciber}%;border-radius:10px;"></div>
-</div>
-<p>${ciber}%</p>
-</div>
+<tr>
+<td style="padding:10px 0;">Ciberseguridad</td>
+<td style="text-align:right;font-weight:bold;">${ciber}%</td>
+</tr>
 
-<div style="margin-bottom:15px;">
-<strong>Continuidad Operacional</strong>
-<div style="background:#1b252b;height:10px;border-radius:10px;margin-top:5px;">
-<div style="background:#00ff95;height:10px;width:${continuidad}%;border-radius:10px;"></div>
-</div>
-<p>${continuidad}%</p>
-</div>
+<tr>
+<td style="padding:10px 0;">Continuidad Operacional</td>
+<td style="text-align:right;font-weight:bold;">${continuidad}%</td>
+</tr>
 
-<div style="margin-bottom:15px;">
-<strong>Respaldo y Recuperación</strong>
-<div style="background:#1b252b;height:10px;border-radius:10px;margin-top:5px;">
-<div style="background:#00ff95;height:10px;width:${recuperacion}%;border-radius:10px;"></div>
-</div>
-<p>${recuperacion}%</p>
-</div>
+<tr>
+<td style="padding:10px 0;">Respaldo y Recuperación</td>
+<td style="text-align:right;font-weight:bold;">${recuperacion}%</td>
+</tr>
 
-<div style="margin-bottom:15px;">
-<strong>Dependencia Humana</strong>
-<div style="background:#1b252b;height:10px;border-radius:10px;margin-top:5px;">
-<div style="background:#00ff95;height:10px;width:${humana}%;border-radius:10px;"></div>
-</div>
-<p>${humana}%</p>
-</div>
+<tr>
+<td style="padding:10px 0;">Dependencia Humana</td>
+<td style="text-align:right;font-weight:bold;">${humana}%</td>
+</tr>
 
+</table>
 `;
 
 const lowest =
