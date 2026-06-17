@@ -60,7 +60,39 @@ margin-top:25px;
 .pdf-btn:hover{
 opacity:.9;
 }
+@media print {
 
+body{
+background:white !important;
+color:black !important;
+display:block;
+padding:0;
+margin:0;
+}
+
+.card{
+background:white !important;
+color:black !important;
+border:none !important;
+box-shadow:none !important;
+width:100% !important;
+max-width:100% !important;
+padding:40px;
+}
+
+.score{
+color:#0a9d58 !important;
+}
+
+h1,h2,h3{
+color:#0a9d58 !important;
+}
+
+#pdfBtn{
+display:none;
+}
+
+}
 </style>
 
 </head>
