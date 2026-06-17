@@ -37,6 +37,8 @@ let answers = [];
 
 const questionElement = document.querySelector(".question");
 const counterElement = document.querySelector(".counter");
+const domainElement = document.querySelector(".domain");
+const percentElement = document.querySelector(".percent");
 const progressBar = document.querySelector(".progress-bar");
 const buttons = document.querySelectorAll(".option");
 
@@ -62,12 +64,22 @@ return;
 
 questionElement.textContent =
 questions[currentQuestion].question;
+domainElement.textContent =
+questions[currentQuestion].domain;
 
 counterElement.textContent =
 `Pregunta ${currentQuestion + 1} de ${questions.length}`;
 
+const progress =
+Math.round(
+((currentQuestion + 1) / questions.length) * 100
+);
+
 progressBar.style.width =
-`${((currentQuestion + 1) / questions.length) * 100}%`;
+`${progress}%`;
+
+percentElement.textContent =
+`Progreso: ${progress}%`;
 
 });
 
