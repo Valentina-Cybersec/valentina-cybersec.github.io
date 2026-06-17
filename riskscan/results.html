@@ -123,9 +123,8 @@ Resultados por Dominio
 </h3>
 
 <div id="domains" style="
-margin-top:15px;
+margin-top:20px;
 text-align:left;
-line-height:1.8;
 ">
 </div>
 
@@ -263,11 +262,47 @@ const domainsDiv =
 document.getElementById("domains");
 
 domainsDiv.innerHTML = `
-<p>Activos Críticos .......... ${activos}%</p>
-<p>Ciberseguridad ............ ${ciber}%</p>
-<p>Continuidad Operacional ... ${continuidad}%</p>
-<p>Respaldo y Recuperación ... ${recuperacion}%</p>
-<p>Dependencia Humana ........ ${humana}%</p>
+
+<div style="margin-bottom:15px;">
+<strong>Activos Críticos</strong>
+<div style="background:#1b252b;height:10px;border-radius:10px;margin-top:5px;">
+<div style="background:#00ff95;height:10px;width:${activos}%;border-radius:10px;"></div>
+</div>
+<p>${activos}%</p>
+</div>
+
+<div style="margin-bottom:15px;">
+<strong>Ciberseguridad</strong>
+<div style="background:#1b252b;height:10px;border-radius:10px;margin-top:5px;">
+<div style="background:#00ff95;height:10px;width:${ciber}%;border-radius:10px;"></div>
+</div>
+<p>${ciber}%</p>
+</div>
+
+<div style="margin-bottom:15px;">
+<strong>Continuidad Operacional</strong>
+<div style="background:#1b252b;height:10px;border-radius:10px;margin-top:5px;">
+<div style="background:#00ff95;height:10px;width:${continuidad}%;border-radius:10px;"></div>
+</div>
+<p>${continuidad}%</p>
+</div>
+
+<div style="margin-bottom:15px;">
+<strong>Respaldo y Recuperación</strong>
+<div style="background:#1b252b;height:10px;border-radius:10px;margin-top:5px;">
+<div style="background:#00ff95;height:10px;width:${recuperacion}%;border-radius:10px;"></div>
+</div>
+<p>${recuperacion}%</p>
+</div>
+
+<div style="margin-bottom:15px;">
+<strong>Dependencia Humana</strong>
+<div style="background:#1b252b;height:10px;border-radius:10px;margin-top:5px;">
+<div style="background:#00ff95;height:10px;width:${humana}%;border-radius:10px;"></div>
+</div>
+<p>${humana}%</p>
+</div>
+
 `;
 
 const lowest =
