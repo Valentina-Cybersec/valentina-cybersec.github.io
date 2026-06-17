@@ -46,6 +46,20 @@ margin-top:20px;
 color:#cccccc;
 line-height:1.6;
 }
+.pdf-btn{
+background:#00ff95;
+color:#000;
+border:none;
+padding:12px 24px;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+margin-top:25px;
+}
+
+.pdf-btn:hover{
+opacity:.9;
+}
 
 </style>
 
@@ -99,6 +113,10 @@ margin-top:15px;
 line-height:1.8;
 ">
 </div>
+
+<button id="pdfBtn" class="pdf-btn">
+📄 Descargar Informe
+</button>
 
 </div>
 
@@ -302,6 +320,13 @@ recomendaciones = `
 
 document.getElementById("recomendaciones").innerHTML =
 recomendaciones;
+
+document.getElementById("pdfBtn")
+.addEventListener("click",()=>{
+
+window.print();
+
+});
 
 </script>
 
