@@ -77,6 +77,8 @@ Math.round(
 
 progressBar.style.width =
 `${progress}%`;
+  
+console.log(progress);
 
 percentElement.textContent =
 `Progreso: ${progress}%`;
