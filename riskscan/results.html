@@ -98,7 +98,7 @@ display:none;
 
 </head>
 
-<body>
+<body id="top">
 
 <div class="card">
 
@@ -172,7 +172,9 @@ VM | FORENSIC & TECH
 </div>
 
 <script>
-window.scrollTo(0,0);
+window.onload = function() {
+    document.getElementById("top").scrollIntoView();
+};
 
 const answers =
 JSON.parse(
