@@ -95,6 +95,37 @@ const answers =
 JSON.parse(
 localStorage.getItem("riskscan_answers")
 ) || [];
+function calculateDomain(start,end){
+
+const slice =
+answers.slice(start,end);
+
+const total =
+slice.reduce((a,b)=>a+b,0);
+
+const max =
+slice.length * 4;
+
+return max > 0
+? Math.round((total/max)*100)
+: 0;
+
+}
+
+const activos =
+calculateDomain(0,5);
+
+const ciber =
+calculateDomain(5,10);
+
+const continuidad =
+calculateDomain(10,15);
+
+const recuperacion =
+calculateDomain(15,20);
+
+const humana =
+calculateDomain(20,25);
 
 const totalPoints =
 answers.reduce((a,b)=>a+b,0);
@@ -143,34 +174,53 @@ const domainsDiv =
 document.getElementById("domains");
 
 domainsDiv.innerHTML = `
-<p>Activos Críticos .......... ${Math.min(score+10,100)}%</p>
-<p>Ciberseguridad ............ ${Math.max(score-5,0)}%</p>
-<p>Continuidad Operacional ... ${Math.max(score-15,0)}%</p>
-<p>Respaldo y Recuperación ... ${Math.min(score+5,100)}%</p>
-<p>Dependencia Humana ........ ${Math.max(score-20,0)}%</p>
+<p>Activos Críticos .......... ${activos}%</p>
+<p>Ciberseguridad ............ ${ciber}%</p>
+<p>Continuidad Operacional ... ${continuidad}%</p>
+<p>Respaldo y Recuperación ... ${recuperacion}%</p>
+<p>Dependencia Humana ........ ${humana}%</p>
 `;
+
+const lowest =
+Math.min(
+activos,
+ciber,
+continuidad,
+recuperacion,
+humana
+);
 
 let hallazgo = "";
 
-if(score < 30){
+if(lowest === activos){
+
 hallazgo =
-"La organización presenta riesgos críticos que podrían afectar seriamente su continuidad operacional.";
+"La principal debilidad identificada corresponde a la gestión de activos críticos y clasificación de información.";
+
 }
-else if(score < 50){
+else if(lowest === ciber){
+
 hallazgo =
-"Se identifican debilidades importantes en documentación, continuidad y recuperación.";
+"La principal debilidad identificada corresponde a controles de ciberseguridad y protección tecnológica.";
+
 }
-else if(score < 70){
+else if(lowest === continuidad){
+
 hallazgo =
-"Existen oportunidades de mejora en continuidad operacional y gestión de riesgos.";
+"La principal debilidad identificada corresponde a continuidad operacional y capacidad de respuesta ante incidentes.";
+
 }
-else if(score < 85){
+else if(lowest === recuperacion){
+
 hallazgo =
-"La organización cuenta con controles adecuados, aunque puede fortalecer su resiliencia.";
+"La principal debilidad identificada corresponde a respaldos y recuperación de servicios críticos.";
+
 }
 else{
+
 hallazgo =
-"La organización demuestra un nivel sólido de preparación y resiliencia tecnológica.";
+"La principal debilidad identificada corresponde a dependencia de personal clave y falta de documentación.";
+
 }
 
 document.getElementById("hallazgo").textContent =
