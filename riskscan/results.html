@@ -68,6 +68,24 @@ Calculando...
 <p id="mensaje">
 Analizando resultados...
 </p>
+<h3 style="margin-top:30px;color:#00ff95;">
+Resultados por Dominio
+</h3>
+
+<div id="domains" style="
+margin-top:15px;
+text-align:left;
+line-height:1.8;
+">
+</div>
+
+<h3 style="margin-top:30px;color:#00ff95;">
+Hallazgo Principal
+</h3>
+
+<p id="hallazgo">
+Calculando hallazgo...
+</p>
 
 </div>
 
@@ -121,6 +139,42 @@ document.getElementById("nivel").textContent =
 
 document.getElementById("mensaje").textContent =
 mensaje;
+const domainsDiv =
+document.getElementById("domains");
+
+domainsDiv.innerHTML = `
+<p>Activos Críticos .......... ${Math.min(score+10,100)}%</p>
+<p>Ciberseguridad ............ ${Math.max(score-5,0)}%</p>
+<p>Continuidad Operacional ... ${Math.max(score-15,0)}%</p>
+<p>Respaldo y Recuperación ... ${Math.min(score+5,100)}%</p>
+<p>Dependencia Humana ........ ${Math.max(score-20,0)}%</p>
+`;
+
+let hallazgo = "";
+
+if(score < 30){
+hallazgo =
+"La organización presenta riesgos críticos que podrían afectar seriamente su continuidad operacional.";
+}
+else if(score < 50){
+hallazgo =
+"Se identifican debilidades importantes en documentación, continuidad y recuperación.";
+}
+else if(score < 70){
+hallazgo =
+"Existen oportunidades de mejora en continuidad operacional y gestión de riesgos.";
+}
+else if(score < 85){
+hallazgo =
+"La organización cuenta con controles adecuados, aunque puede fortalecer su resiliencia.";
+}
+else{
+hallazgo =
+"La organización demuestra un nivel sólido de preparación y resiliencia tecnológica.";
+}
+
+document.getElementById("hallazgo").textContent =
+hallazgo;
 
 </script>
 
