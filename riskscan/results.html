@@ -113,130 +113,6 @@
         
         <div id="recomendaciones" style="text-align: left; margin-top: 20px;"></div>
 
-        <button id="pdfBtn" class="pdf-btn">Descargar Reporte PDF</button>
-    </div>
-
-    <script>
-        // RECUPERAR RESPUESTAS Y CÁLCULOS MATEMÁTICOS ORIGINALES
-        const respuestas = JSON.parse(localStorage.getItem('riskscan_respuestas')) || {};
-        
-        // Puntuaciones por dimensión
-        let activos = 0, ciber = 0, continuidad = 0, recuperacion = 0, organizacion = 0;
-        
-        // 1. Dimensión: Activos
-        if(respuestas.q1 === 'si') activos += 33;
-        if(respuestas.q2 === 'si') activos += 33;
-        if(respuestas.q3 === 'si') activos += 34;
-        
-        // 2. Dimensión: Ciberseguridad
-        if(respuestas.q4 === 'si') ciber += 33;
-        if(respuestas.q5 === 'si') ciber += 33;
-        if(respuestas.q6 === 'si') ciber += 34;
-        
-        // 3. Dimensión: Continuidad
-        if(respuestas.q7 === 'si') continuidad += 33;
-        if(respuestas.q8 === 'si') continuidad += 33;
-        if(respuestas.q9 === 'si') continuidad += 34;
-        
-        // 4. Dimensión: Recuperación
-        if(respuestas.q10 === 'si') recuperacion += 33;
-        if(respuestas.q11 === 'si') recuperacion += 33;
-        if(respuestas.q12 === 'si') recuperacion += 34;
-        
-        // 5. Dimensión: Organización
-        if(respuestas.q13 === 'si') organizacion += 33;
-        if(respuestas.q14 === 'si') organizacion += 33;
-        if(respuestas.q15 === 'si') organizacion += 34;
-        
-        // Calcular Puntaje Total Promedio
-        const totalScore = Math.round((activos + ciber + continuidad + recuperacion + organizacion) / 5);
-        
-        // Mostrar Puntaje y Nivel en pantalla
-        document.getElementById("resultado").innerText = totalScore + "%";
-        
-        let nivelElement = document.getElementById("nivel");
-        let mensajeElement = document.getElementById("mensaje");
-        
-        if(totalScore >= 80) {
-            nivelElement.innerText = "Nivel: Excelente Resiliencia";
-            nivelElement.style.color = "#00ff95";
-            mensajeElement.innerText = "Su organización cuenta con sólidas bases para enfrentar y mitigar incidentes tecnológicos. Continúe auditando sus procesos de forma regular.";
-        } else if(totalScore >= 50) {
-            nivelElement.innerText = "Nivel: Resiliencia Moderada";
-            nivelElement.style.color = "#ffcc00";
-            mensajeElement.innerText = "Tiene protecciones activas, pero existen brechas importantes que podrían detener su operación ante un ataque o falla crítica. Revise las prioridades abajo.";
-        } else {
-            nivelElement.innerText = "Nivel: Riesgo Crítico";
-            nivelElement.style.color = "#ff3333";
-            mensajeElement.innerText = "Su negocio está altamente expuesto. Una falla operacional o pérdida de servicios clave podría causar un impacto financiero grave y días de inactividad.";
-        }
-
-        // Determinar la dimensión más débil (Lowest)
-        const dimensiones = [
-            { nombre: 'activos', valor: activos },
-            { nombre: 'ciber', valor: ciber },
-            { nombre: 'continuidad', valor: continuidad },
-            { nombre: 'recuperacion', valor: recuperacion },
-            { nombre: 'organizacion', valor: organizacion }
-        ];
-        
-        dimensiones.sort((a, b) => a.valor - b.valor);
-        const lowest = dimensiones[0].nombre;
-
-        // ASIGNACIÓN DE RECOMENDACIONES SEGÚN EL PUNTO MÁS DÉBIL
-        let recomendaciones = "";
-
-        if(lowest === 'activos'){
-            recomendaciones = `
-            <ul>
-            <li>Crear inventario formal de activos.</li>
-            <li>Clasificar información crítica.</li>
-            <li>Revisar activos periódicamente.</li>
-            </ul>
-            `;
-        }
-        else if(lowest === 'ciber'){
-            recomendaciones = `
-            <ul>
-            <li>Implementar MFA (Doble factor de autenticación).</li>
-            <li>Aplicar actualizaciones periódicas.</li>
-            <li>Revisar privilegios de acceso.</li>
-            </ul>
-            `;
-        }
-        else if(lowest === 'continuidad'){
-            recomendaciones = `
-            <ul>
-            <li>Documentar procedimientos de continuidad.</li>
-            <li>Definir responsables operacionales.</li>
-            <li>Realizar simulacros periódicos.</li>
-            </ul>
-            `;
-        }
-        else if(lowest === 'recuperacion'){
-            recomendaciones = `
-            <ul>
-            <li>Validar respaldos regularmente.</li>
-            <li>Realizar pruebas de restauración.</li>
-            <li>Mantener copias fuera del sitio.</li>
-            </ul>
-            `;
-        }
-        else{
-            recomendaciones = `
-            <ul>
-            <li>Documentar procedimientos críticos.</li>
-            <li>Capacitar personal alternativo.</li>
-            <li>Reducir dependencia de personas clave.</li>
-            </ul>
-            `;
-        }
-
-        // 1. Inyectar recomendaciones en el HTML
-        document.getElementById("recomendaciones").innerHTML = recomendaciones;
-
-        // 2. INYECTAR LA CAJA DE WHATSAPP JUSTO ABAJO Y BIEN ENCUADRADA
-        const cajaContactoHTML = `
         <div class="caja-whatsapp" style="margin-top: 40px; margin-bottom: 20px; padding: 30px; background: #0b1114; border-radius: 12px; border: 1px dashed #00ff95; text-align: center; box-sizing: border-box; width: 100%;">
           <h3 style="color: #00ff95; margin-bottom: 15px; font-size: 1.5rem; font-family: Arial,sans-serif; font-weight: bold; margin-top: 0;">¿Quieres ayuda para implementar estas recomendaciones?</h3>
           <p style="color: white; margin-bottom: 25px; font-weight: 300; font-size: 1.1rem; font-family: Arial,sans-serif; line-height: 1.5;">
@@ -248,18 +124,10 @@
              💬 Hablar con un Especialista por WhatsApp
           </a>
         </div>
-        `;
 
-        // Ubica el botón de PDF para poner la caja de WhatsApp exactamente antes de este
-        const botonPdf = document.getElementById("pdfBtn");
-        if (botonPdf) {
-            botonPdf.insertAdjacentHTML('beforebegin', cajaContactoHTML);
-        }
+        <button id="pdfBtn" class="pdf-btn">Descargar Reporte PDF</button>
+    </div>
 
-        // 3. Evento para imprimir PDF
-        botonPdf.addEventListener("click",()=>{
-            window.print();
-        });
-    </script>
+    <script src="app.js"></script> 
 </body>
 </html>
