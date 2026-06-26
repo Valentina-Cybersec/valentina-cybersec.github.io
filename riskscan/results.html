@@ -1,477 +1,205 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-W9PKJ5XNJF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W9PKJ5XNJF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'G-W9PKJ5XNJF');
-</script>
+      gtag('config', 'G-W9PKJ5XNJF');
+    </script>
 
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RiskScan Resultado</title>
 
-<title>RiskScan Resultado</title>
+    <style>
+        body{
+            background:#06090d;
+            color:white;
+            font-family:Arial,sans-serif;
+            display:flex;
+            justify-content:center;
+            padding:40px 0;
+            margin:0;
+        }
 
-<style>
+        .card{
+            background:#0b1114;
+            padding:40px;
+            border-radius:12px;
+            text-align:center;
+            max-width:700px;
+            width:90%;
+            border:1px solid rgba(0,255,149,.1);
+        }
 
-body{
-background:#06090d;
-color:white;
-font-family:Arial,sans-serif;
-display:flex;
-justify-content:center;
-padding:40px 0;
-margin:0;
-}
+        .score{
+            font-size:4rem;
+            color:#00ff95;
+            font-weight:bold;
+            margin:20px 0;
+        }
 
-.card{
-background:#0b1114;
-padding:40px;
-border-radius:12px;
-text-align:center;
-max-width:700px;
-width:90%;
-border:1px solid rgba(0,255,149,.1);
-}
+        #nivel{
+            font-size:1.3rem;
+            margin:15px 0;
+        }
 
-.score{
-font-size:4rem;
-color:#00ff95;
-font-weight:bold;
-margin:20px 0;
-}
+        #mensaje{
+            margin-top:20px;
+            color:#cccccc;
+            line-height:1.6;
+        }
 
-#nivel{
-font-size:1.3rem;
-margin:15px 0;
-}
+        .pdf-btn{
+            background:#00ff95;
+            color:#000;
+            border:none;
+            padding:12px 24px;
+            border-radius:8px;
+            font-weight:bold;
+            cursor:pointer;
+            margin-top:25px;
+        }
 
-#mensaje{
-margin-top:20px;
-color:#cccccc;
-line-height:1.6;
-}
+        .pdf-btn:hover{
+            opacity:.9;
+        }
 
-.pdf-btn{
-background:#00ff95;
-color:#000;
-border:none;
-padding:12px 24px;
-border-radius:8px;
-font-weight:bold;
-cursor:pointer;
-margin-top:25px;
-}
+        /* ESTILOS PARA CUANDO SE IMPRIME EL PDF */
+        @media print {
+            body{
+                background:white !important;
+                color:black !important;
+                display:block;
+                padding:0;
+                margin:0;
+            }
 
-.pdf-btn:hover{
-opacity:.9;
-}
-@media print {
+            .card{
+                background:white !important;
+                color:black !important;
+                border:none !important;
+                box-shadow:none !important;
+                width:auto !important;
+                max-width:none !important;
+                padding:20px !important;
+                margin:0 !important;
+            }
 
-body{
-background:white !important;
-color:black !important;
-display:block;
-padding:0;
-margin:0;
-}
+            .score{
+                color:#0a9d58 !important;
+            }
 
-.card{
-background:white !important;
-color:black !important;
-border:none !important;
-box-shadow:none !important;
-width:auto !important;
-max-width:none !important;
-padding:20px !important;
-margin:0 !important;
-}
+            h1,h2,h3{
+                color:#0a9d58 !important;
+            }
 
-.score{
-color:#0a9d58 !important;
-}
-
-h1,h2,h3{
-color:#0a9d58 !important;
-}
-
-#pdfBtn{
-display:none;
-}
-
-}
-</style>
-
+            /* Esto oculta el botón de PDF y la caja de WhatsApp en la impresión */
+            #pdfBtn, .caja-whatsapp {
+                display:none !important;
+            }
+        }
+    </style>
 </head>
 
-<body id="top">
-
-<div class="card">
-
-<h1>RiskScan Score</h1>
-<p id="fecha" style="color:#99bfb0;margin-top:-10px;">
-Evaluación realizada: --
-</p>
-
-<div class="score" id="score">
-0
-</div>
-
-<p id="nivel">
-Calculando...
-</p>
-
-<p id="mensaje">
-Analizando resultados...
-</p>
-<h3 style="margin-top:30px;color:#00ff95;">
-Resultados por Dominio
-</h3>
-
-<div id="domains" style="
-margin-top:20px;
-text-align:left;
-">
-</div>
-
-<h3 style="margin-top:30px;color:#00ff95;">
-Hallazgo Principal
-</h3>
-
-<p id="hallazgo">
-Calculando hallazgo...
-</p>
-
-<h3 style="margin-top:30px;color:#00ff95;">
-Recomendaciones Prioritarias
-</h3>
-
-<div id="recomendaciones" style="
-text-align:left;
-margin-top:15px;
-line-height:1.8;
-">
-</div>
-
-<button id="pdfBtn" class="pdf-btn">
-📄 Descargar Informe
-</button>
-<h3 style="margin-top:35px;color:#00ff95;">
-Próximo Paso Recomendado
-</h3>
-
-<p style="
-margin-top:15px;
-line-height:1.8;
-">
-Una evaluación especializada permitirá validar estos resultados y definir un plan de mejora priorizado para aumentar la resiliencia tecnológica de la organización.
-</p>
-
-<p style="
-margin-top:20px;
-font-weight:bold;
-color:#00ff95;
-">
-VM | FORENSIC & TECH
-</p>
-</div>
-
-<script>
-window.onload = function() {
-    document.getElementById("top").scrollIntoView();
-};
-
-const answers =
-JSON.parse(
-localStorage.getItem("riskscan_answers")
-) || [];
-function calculateDomain(start,end){
-
-const slice =
-answers.slice(start,end);
-
-const total =
-slice.reduce((a,b)=>a+b,0);
-
-const max =
-slice.length * 4;
-
-return max > 0
-? Math.round((total/max)*100)
-: 0;
-
-}
-
-const activos =
-calculateDomain(0,5);
-
-const ciber =
-calculateDomain(5,10);
-
-const continuidad =
-calculateDomain(10,15);
-
-const recuperacion =
-calculateDomain(15,20);
-
-const humana =
-calculateDomain(20,25);
-
-const totalPoints =
-answers.reduce((a,b)=>a+b,0);
-
-const maxPoints =
-answers.length * 4;
-
-const score =
-maxPoints > 0
-? Math.round((totalPoints/maxPoints)*100)
-: 0;
-
-document.getElementById("score").textContent =
-score;
-const hoy = new Date();
-
-document.getElementById("fecha").textContent =
-`Evaluación realizada: ${hoy.toLocaleDateString("es-CL")}`;
-
-let nivel = "";
-let mensaje = "";
-
-if(score >= 85){
-nivel = "🟢 Resiliente";
-mensaje = "La organización presenta una alta capacidad de recuperación y continuidad operacional.";
-}
-else if(score >= 70){
-nivel = "🟢 Maduro";
-mensaje = "La organización cuenta con controles adecuados, aunque existen oportunidades de mejora.";
-}
-else if(score >= 50){
-nivel = "🟡 Intermedio";
-mensaje = "Existen riesgos que podrían afectar la continuidad operacional ante un incidente.";
-}
-else if(score >= 30){
-nivel = "🟠 Vulnerable";
-mensaje = "La organización presenta debilidades importantes en recuperación y resiliencia.";
-}
-else{
-nivel = "🔴 Crítico";
-mensaje = "Se recomienda abordar de forma prioritaria los riesgos identificados.";
-}
-
-document.getElementById("nivel").textContent =
-"Nivel: " + nivel;
-
-document.getElementById("mensaje").textContent =
-mensaje;
-const domainsDiv =
-document.getElementById("domains");
-
-domainsDiv.innerHTML = `
-<table style="
-width:100%;
-border-collapse:collapse;
-margin-top:15px;
-">
-
-<tr>
-<td style="padding:10px 0;">Activos Críticos</td>
-<td style="text-align:right;font-weight:bold;">${activos}%</td>
-</tr>
-
-<tr>
-<td style="padding:10px 0;">Ciberseguridad</td>
-<td style="text-align:right;font-weight:bold;">${ciber}%</td>
-</tr>
-
-<tr>
-<td style="padding:10px 0;">Continuidad Operacional</td>
-<td style="text-align:right;font-weight:bold;">${continuidad}%</td>
-</tr>
-
-<tr>
-<td style="padding:10px 0;">Respaldo y Recuperación</td>
-<td style="text-align:right;font-weight:bold;">${recuperacion}%</td>
-</tr>
-
-<tr>
-<td style="padding:10px 0;">Dependencia Humana</td>
-<td style="text-align:right;font-weight:bold;">${humana}%</td>
-</tr>
-
-</table>
-`;
-
-const lowest =
-Math.min(
-activos,
-ciber,
-continuidad,
-recuperacion,
-humana
-);
-
-let hallazgo = "";
-
-if(lowest === activos){
-
-hallazgo =
-"La principal debilidad identificada corresponde a la gestión de activos críticos y clasificación de información.";
-
-}
-else if(lowest === ciber){
-
-hallazgo =
-"La principal debilidad identificada corresponde a controles de ciberseguridad y protección tecnológica.";
-
-}
-else if(lowest === continuidad){
-
-hallazgo =
-"La principal debilidad identificada corresponde a continuidad operacional y capacidad de respuesta ante incidentes.";
-
-}
-else if(lowest === recuperacion){
-
-hallazgo =
-"La principal debilidad identificada corresponde a respaldos y recuperación de servicios críticos.";
-
-}
-else{
-
-hallazgo =
-"La principal debilidad identificada corresponde a dependencia de personal clave y falta de documentación.";
-
-}
-
-document.getElementById("hallazgo").textContent =
-hallazgo;
-let recomendaciones = "";
-
-if(lowest === activos){
-
-recomendaciones = `
-<ul>
-<li>Crear inventario formal de activos.</li>
-<li>Clasificar información crítica.</li>
-<li>Revisar activos periódicamente.</li>
-</ul>
-`;
-
-}
-else if(lowest === ciber){
-
-recomendaciones = `
-<ul>
-<li>Implementar MFA.</li>
-<li>Aplicar actualizaciones periódicas.</li>
-<li>Revisar privilegios de acceso.</li>
-</ul>
-`;
-
-}
-else if(lowest === continuidad){
-
-recomendaciones = `
-<ul>
-<li>Documentar procedimientos de continuidad.</li>
-<li>Definir responsables operacionales.</li>
-<li>Realizar simulacros periódicos.</li>
-</ul>
-`;
-
-}
-else if(lowest === recuperacion){
-
-recomendaciones = `
-<ul>
-<li>Crear inventario formal de activos.</li>
-<li>Clasificar información crítica.</li>
-<li>Revisar activos periódicamente.</li>
-</ul>
-`;
-
-}
-else if(lowest === ciber){
-
-recomendaciones = `
-<ul>
-<li>Implementar MFA.</li>
-<li>Aplicar actualizaciones periódicas.</li>
-<li>Revisar privilegios de acceso.</li>
-</ul>
-`;
-
-}
-else if(lowest === continuidad){
-
-recomendaciones = `
-<ul>
-<li>Documentar procedimientos de continuidad.</li>
-<li>Definir responsables operacionales.</li>
-<li>Realizar simulacros periódicos.</li>
-</ul>
-`;
-
-}
-else if(lowest === recuperacion){
-
-recomendaciones = `
-<ul>
-<li>Validar respaldos regularmente.</li>
-<li>Realizar pruebas de restauración.</li>
-<li>Mantener copias fuera del sitio.</li>
-</ul>
-`;
-
-}
-else{
-
-recomendaciones = `
-<ul>
-<li>Documentar procedimientos críticos.</li>
-<li>Capacitar personal alternativo.</li>
-<li>Reducir dependencia de personas clave.</li>
-</ul>
-`;
-
-}
-
-// 1. Muestra las recomendaciones en pantalla
-document.getElementById("recomendaciones").innerHTML = recomendaciones;
-
-// 2. Inserta el botón de WhatsApp automáticamente abajo de las recomendaciones
-const cajaContactoHTML = `
-<div style="margin-top: 40px; padding: 30px; background: var(--card); border-radius: 12px; border: 1px dashed var(--neon); text-align: center;">
-  <h3 style="color: var(--neon); margin-bottom: 15px; font-size: 1.5rem; font-family: Inter,Arial,sans-serif;">¿Quieres ayuda para implementar estas recomendaciones?</h3>
-  <p style="color: var(--text); margin-bottom: 25px; font-weight: 300; font-size: 1.1rem; font-family: Inter,Arial,sans-serif;">
-    No dejes la seguridad de tu empresa al azar. Agenda una revisión gratuita de 15 minutos para priorizar tu plan de acción.
-  </p>
-  <a href="https://wa.me/56968672169?text=Hola%20Valentina,%20hice%20el%20test%20en%20RiskScan%20y%20me%20gustar%C3%ADa%20revisar%20mi%20plan%20de%20acci%C3%B3n" 
-     target="_blank" 
-     style="display: inline-block; padding: 15px 30px; background: #25D366; color: #fff; font-weight: 700; text-decoration: none; border-radius: 8px; font-size: 1rem; letter-spacing: 0.5px; font-family: Inter,Arial,sans-serif; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);">
-     💬 Hablar con un Especialista por WhatsApp
-  </a>
-</div>
-`;
-
-document.getElementById("recomendaciones").insertAdjacentHTML('afterend', cajaContactoHTML);
-
-// 3. Tu botón existente para imprimir/guardar PDF
-document.getElementById("pdfBtn")
-.addEventListener("click",()=>{
-
-window.print();
-
-});
-
-</script>
-
+<body>
+
+    <div class="card">
+        <h1>Resultado de su Evaluación</h1>
+        <div id="resultado" class="score">0%</div>
+        <div id="nivel">Calculando...</div>
+        <p id="mensaje">Analizando sus respuestas...</p>
+        
+        <div id="recomendaciones" style="text-align: left; margin-top: 20px;">
+            <!-- Aquí JavaScript inyecta la lista <ul> de recomendaciones -->
+        </div>
+
+        <button id="pdfBtn" class="pdf-btn">Descargar Reporte PDF</button>
+    </div>
+
+    <script>
+        // ... (Tu lógica previa para calcular las variables 'lowest', 'ciber', etc. debe ir aquí) ...
+
+        // Ejemplo de marcador de posición para evitar errores si pruebas el código aislado:
+        let lowest = "ciber"; 
+        let ciber = "ciber";
+        let recomendaciones = "";
+
+        if(lowest === "activos"){
+            recomendaciones = `
+            <ul>
+            <li>Crear inventario formal de activos.</li>
+            <li>Clasificar información crítica.</li>
+            <li>Revisar activos periódicamente.</li>
+            </ul>
+            `;
+        }
+        else if(lowest === ciber){
+            recomendaciones = `
+            <ul>
+            <li>Implementar MFA.</li>
+            <li>Aplicar actualizaciones periódicas.</li>
+            <li>Revisar privilegios de acceso.</li>
+            </ul>
+            `;
+        }
+        else if(lowest === "continuidad"){
+            recomendaciones = `
+            <ul>
+            <li>Documentar procedimientos de continuidad.</li>
+            <li>Definir responsables operacionales.</li>
+            <li>Realizar simulacros periódicos.</li>
+            </ul>
+            `;
+        }
+        else if(lowest === "recuperacion"){
+            recomendaciones = `
+            <ul>
+            <li>Validar respaldos regularmente.</li>
+            <li>Realizar pruebas de restauración.</li>
+            <li>Mantener copias fuera del sitio.</li>
+            </ul>
+            `;
+        }
+        else{
+            recomendaciones = `
+            <ul>
+            <li>Documentar procedimientos críticos.</li>
+            <li>Capacitar personal alternativo.</li>
+            <li>Reducir dependencia de personas clave.</li>
+            </ul>
+            `;
+        }
+
+        // 1. Muestra las recomendaciones en pantalla
+        document.getElementById("recomendaciones").innerHTML = recomendaciones;
+
+        // 2. Inserta el botón de WhatsApp con tu número real justo abajo
+        const cajaContactoHTML = `
+        <div class="caja-whatsapp" style="margin-top: 40px; padding: 30px; background: #0b1114; border-radius: 12px; border: 1px dashed #00ff95; text-align: center;">
+          <h3 style="color: #00ff95; margin-bottom: 15px; font-size: 1.5rem; font-family: Arial,sans-serif;">¿Quieres ayuda para implementar estas recomendaciones?</h3>
+          <p style="color: white; margin-bottom: 25px; font-weight: 300; font-size: 1.1rem; font-family: Arial,sans-serif;">
+            No dejes la seguridad de tu empresa al azar. Agenda una revisión gratuita de 15 minutos para priorizar tu plan de acción.
+          </p>
+          <a href="https://wa.me/56968672169?text=Hola%20Valentina,%20hice%20el%20test%20en%20RiskScan%20y%20me%20gustar%C3%ADa%20revisar%20mi%20plan%20de%20acci%C3%B3n" 
+             target="_blank" 
+             style="display: inline-block; padding: 15px 30px; background: #25D366; color: #fff; font-weight: 700; text-decoration: none; border-radius: 8px; font-size: 1rem; letter-spacing: 0.5px; font-family: Arial,sans-serif; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);">
+             💬 Hablar con un Especialista por WhatsApp
+          </a>
+        </div>
+        `;
+
+        document.getElementById("recomendaciones").insertAdjacentHTML('afterend', cajaContactoHTML);
+
+        // 3. Botón para imprimir PDF
+        document.getElementById("pdfBtn").addEventListener("click",()=>{
+            window.print();
+        });
+    </script>
 </body>
 </html>
