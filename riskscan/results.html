@@ -28,6 +28,35 @@
         }
 
         .card{
+            background:#0b1114;<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W9PKJ5XNJF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-W9PKJ5XNJF');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RiskScan Resultado</title>
+
+    <style>
+        body{
+            background:#06090d;
+            color:white;
+            font-family:Arial,sans-serif;
+            display:flex;
+            justify-content:center;
+            padding:40px 0;
+            margin:0;
+        }
+
+        .card{
             background:#0b1114;
             padding:40px;
             border-radius:12px;
@@ -70,7 +99,6 @@
             opacity:.9;
         }
 
-        /* ESTILOS PARA CUANDO SE IMPRIME EL PDF */
         @media print {
             body{
                 background:white !important;
@@ -99,14 +127,12 @@
                 color:#0a9d58 !important;
             }
 
-            /* Esto oculta el botón de PDF y la caja de WhatsApp en la impresión */
             #pdfBtn, .caja-whatsapp {
                 display:none !important;
             }
         }
     </style>
 </head>
-
 <body>
 
     <div class="card">
@@ -115,22 +141,82 @@
         <div id="nivel">Calculando...</div>
         <p id="mensaje">Analizando sus respuestas...</p>
         
-        <div id="recomendaciones" style="text-align: left; margin-top: 20px;">
-            <!-- Aquí JavaScript inyecta la lista <ul> de recomendaciones -->
-        </div>
+        <div id="recomendaciones" style="text-align: left; margin-top: 20px;"></div>
 
         <button id="pdfBtn" class="pdf-btn">Descargar Reporte PDF</button>
     </div>
 
     <script>
-        // ... (Tu lógica previa para calcular las variables 'lowest', 'ciber', etc. debe ir aquí) ...
+        // RECUPERAR RESPUESTAS Y CÁLCULOS MATEMÁTICOS ORIGINALES
+        const respuestas = JSON.parse(localStorage.getItem('riskscan_respuestas')) || {};
+        
+        // Puntuaciones por dimensión
+        let activos = 0, ciber = 0, continuidad = 0, recuperacion = 0, organizacion = 0;
+        
+        // 1. Dimensión: Activos
+        if(respuestas.q1 === 'si') activos += 33;
+        if(respuestas.q2 === 'si') activos += 33;
+        if(respuestas.q3 === 'si') activos += 34;
+        
+        // 2. Dimensión: Ciberseguridad
+        if(respuestas.q4 === 'si') ciber += 33;
+        if(respuestas.q5 === 'si') ciber += 33;
+        if(respuestas.q6 === 'si') ciber += 34;
+        
+        // 3. Dimensión: Continuidad
+        if(respuestas.q7 === 'si') continuidad += 33;
+        if(respuestas.q8 === 'si') continuidad += 33;
+        if(respuestas.q9 === 'si') continuidad += 34;
+        
+        // 4. Dimensión: Recuperación
+        if(respuestas.q10 === 'si') recuperacion += 33;
+        if(respuestas.q11 === 'si') recuperacion += 33;
+        if(respuestas.q12 === 'si') recuperacion += 34;
+        
+        // 5. Dimensión: Organización
+        if(respuestas.q13 === 'si') organizacion += 33;
+        if(respuestas.q14 === 'si') organizacion += 33;
+        if(respuestas.q15 === 'si') organizacion += 34;
+        
+        // Calcular Puntaje Total Promedio
+        const totalScore = Math.round((activos + ciber + continuidad + recuperacion + organizacion) / 5);
+        
+        // Mostrar Puntaje y Nivel en pantalla
+        document.getElementById("resultado").innerText = totalScore + "%";
+        
+        let nivelElement = document.getElementById("nivel");
+        let mensajeElement = document.getElementById("mensaje");
+        
+        if(totalScore >= 80) {
+            nivelElement.innerText = "Nivel: Excelente Resiliencia";
+            nivelElement.style.color = "#00ff95";
+            mensajeElement.innerText = "Su organización cuenta con sólidas bases para enfrentar y mitigar incidentes tecnológicos. Continúe auditando sus procesos de forma regular.";
+        } else if(totalScore >= 50) {
+            nivelElement.innerText = "Nivel: Resiliencia Moderada";
+            nivelElement.style.color = "#ffcc00";
+            mensajeElement.innerText = "Tiene protecciones activas, pero existen brechas importantes que podrían detener su operación ante un ataque o falla crítica. Revise las prioridades abajo.";
+        } else {
+            nivelElement.innerText = "Nivel: Riesgo Crítico";
+            nivelElement.style.color = "#ff3333";
+            mensajeElement.innerText = "Su negocio está altamente expuesto. Una falla operacional o pérdida de servicios clave podría causar un impacto financiero grave y días de inactividad.";
+        }
 
-        // Ejemplo de marcador de posición para evitar errores si pruebas el código aislado:
-        let lowest = "ciber"; 
-        let ciber = "ciber";
+        // Determinar la dimensión más débil (Lowest)
+        const dimensiones = [
+            { nombre: 'activos', valor: activos },
+            { nombre: 'ciber', valor: ciber },
+            { nombre: 'continuidad', valor: continuidad },
+            { nombre: 'recuperacion', valor: recuperacion },
+            { nombre: 'organizacion', valor: organizacion }
+        ];
+        
+        dimensiones.sort((a, b) => a.valor - b.valor);
+        const lowest = dimensiones[0].nombre;
+
+        // ASIGNACIÓN DE RECOMENDACIONES SEGÚN EL PUNTO MÁS DÉBIL
         let recomendaciones = "";
 
-        if(lowest === "activos"){
+        if(lowest === 'activos'){
             recomendaciones = `
             <ul>
             <li>Crear inventario formal de activos.</li>
@@ -139,16 +225,16 @@
             </ul>
             `;
         }
-        else if(lowest === ciber){
+        else if(lowest === 'ciber'){
             recomendaciones = `
             <ul>
-            <li>Implementar MFA.</li>
+            <li>Implementar MFA (Doble factor de autenticación).</li>
             <li>Aplicar actualizaciones periódicas.</li>
             <li>Revisar privilegios de acceso.</li>
             </ul>
             `;
         }
-        else if(lowest === "continuidad"){
+        else if(lowest === 'continuidad'){
             recomendaciones = `
             <ul>
             <li>Documentar procedimientos de continuidad.</li>
@@ -157,7 +243,7 @@
             </ul>
             `;
         }
-        else if(lowest === "recuperacion"){
+        else if(lowest === 'recuperacion'){
             recomendaciones = `
             <ul>
             <li>Validar respaldos regularmente.</li>
@@ -176,10 +262,10 @@
             `;
         }
 
-        // 1. Muestra las recomendaciones en pantalla
+        // Inyectar recomendaciones en el HTML
         document.getElementById("recomendaciones").innerHTML = recomendaciones;
 
-        // 2. Inserta el botón de WhatsApp con tu número real justo abajo
+        // INYECTAR LA CAJA DE WHATSAPP JUSTO DEBAJO
         const cajaContactoHTML = `
         <div class="caja-whatsapp" style="margin-top: 40px; padding: 30px; background: #0b1114; border-radius: 12px; border: 1px dashed #00ff95; text-align: center;">
           <h3 style="color: #00ff95; margin-bottom: 15px; font-size: 1.5rem; font-family: Arial,sans-serif;">¿Quieres ayuda para implementar estas recomendaciones?</h3>
@@ -196,7 +282,7 @@
 
         document.getElementById("recomendaciones").insertAdjacentHTML('afterend', cajaContactoHTML);
 
-        // 3. Botón para imprimir PDF
+        // Evento para el botón de impresión del PDF
         document.getElementById("pdfBtn").addEventListener("click",()=>{
             window.print();
         });
